@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="Tanmoy Chowdhury">
 <meta property="og:description" content="Business Automation Expert and Finance Compliance Officer">
 <meta property="og:image" content="photo.jpg">
 <link rel="icon" href="photo.jpg">
 <title>Tanmoy Chowdhury</title>
+<script>(function(){try{var t=localStorage.getItem("theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
 <meta name="description" content="Tanmoy Chowdhury, Business Automation Expert and Finance Compliance Officer from Chattogram, Bangladesh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -313,6 +315,24 @@ footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;jus
   .cc{width:100%}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv.pre{transform:none}html{scroll-behavior:auto}}
+
+/* Dark mode */
+:root{--card:#ffffff;--chip:#f1f5f9}
+html[data-theme=dark]{--bg:#041619;--ink:#e8fbf8;--soft:#8fb5b2;--line:#14383e;--glass:#06201fcc;--card:#0a2328;--chip:#113238;color-scheme:dark}
+body,.nav,.chat,.facts,.job,.ed,.r,.stats,.pill,.burger,.drawer,.badge,.ab-chips span,.tags span{transition:background-color .4s,border-color .4s,color .4s}
+html[data-theme=dark] :is(.burger,.drawer,.chat,.badge,.facts,.r,.job,.ed,.ab-chips span){background:var(--card)}
+html[data-theme=dark] :is(.msg.c,.typing,.tags span){background:var(--chip)}
+html[data-theme=dark] .fp .tags span{background:#ffffff22}
+html[data-theme=dark] .r.on{background:color-mix(in srgb,var(--c) 16%,var(--card))}
+html[data-theme=dark] .job::before{background:var(--bg)}
+html[data-theme=dark] .logo img{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--teal)}
+html[data-theme=dark] .cv:hover{color:var(--bg)}
+html[data-theme=dark] .now-tag{background:#14532d;color:#86efac}
+html[data-theme=dark] #services .ic[style*="#0f172a"]{background:#334155}
+html[data-theme=dark] .fp{box-shadow:inset 0 0 0 1px #ffffff14,0 30px 60px -34px #000}
+html[data-theme=dark] .blobs{opacity:.3}
+html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50px -30px #000c}
+.tgl{width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--glass);color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;flex:none;overflow:hidden;transition:border-color .3s,transform .2s}.tgl:hover{border-color:var(--teal)}.tgl:active{transform:scale(.94)}.tgl svg{grid-area:1/1;width:19px;height:19px;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .3s}.tgl .moon{opacity:0;transform:rotate(-90deg) scale(.4)}html[data-theme=dark] .tgl .sun{opacity:0;transform:rotate(90deg) scale(.4)}html[data-theme=dark] .tgl .moon{opacity:1;transform:none}html[data-theme=dark] .tgl{color:#fde68a}
 </style>
 </head>
 <body>
@@ -330,6 +350,7 @@ footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;jus
         <li><a href="#education">Education</a></li>
       </ul>
       <div class="right">
+        <button class="tgl" id="tgl" type="button" aria-label="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button>
         <a class="cv" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
         <a class="cta" href="#contact">Hire me</a>
         <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false"><i></i></button>
@@ -502,6 +523,8 @@ footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;jus
 })();
 
 (function(){var noHover=true,mobJump,dir,after;var root=document.getElementById("services");if(!root)return;var rows=[].slice.call(root.querySelectorAll(".r")),ps=[].slice.call(root.querySelectorAll(".fp")),cur=0,hv=matchMedia("(hover:hover)").matches;function go(i){if(i===cur)return;var prev=cur;cur=i;rows.forEach(function(r,k){r.classList.toggle("on",k===i)});ps.forEach(function(p,k){p.classList.toggle("on",k===i);if(dir)dir(p,k,i,prev)});if(after)after(i)}rows.forEach(function(r,i){if(hv&&!noHover)r.addEventListener("mouseenter",function(){go(i)});r.addEventListener("click",function(){go(i);if(innerWidth<900&&mobJump!==false){var st=root.querySelector(".stage");var y=st.getBoundingClientRect().top+scrollY-90;scrollTo({top:y,behavior:"smooth"})}})});})();
+
+(function(){var b=document.getElementById("tgl"),h=document.documentElement;if(!b)return;function sync(){var d=h.getAttribute("data-theme")==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode")}sync();b.addEventListener("click",function(){var t=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(e){}sync()})})();
 </script>
 
 </body>
