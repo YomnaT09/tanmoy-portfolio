@@ -191,6 +191,19 @@ h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;marg
 .copy{font:600 12px var(--body);background:var(--white);color:var(--ink);border:0;border-radius:8px;padding:6px 10px;cursor:pointer}
 footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
+.ab{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.ab-pic{position:relative;max-width:340px;width:100%;justify-self:center}
+.ab-pic::before{content:"";position:absolute;inset:8% -6% -6% 8%;border-radius:28px;background:linear-gradient(135deg,var(--teal),var(--rose));transform:rotate(4deg)}
+.ab-pic img{position:relative;display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:28px;transform:rotate(-3deg);transition:transform .5s;box-shadow:0 30px 60px -30px #0f172a88}
+.ab-pic:hover img{transform:rotate(0)}
+.ab-q{display:block;font:600 clamp(24px,3vw,34px)/1.25 var(--display);letter-spacing:-.02em;quotes:"\201C" "\201D";margin:12px 0 18px;text-wrap:balance}
+.ab-q::before{color:var(--teal)}.ab-q::after{color:var(--rose)}
+.ab-sig{font:500 15px var(--display);color:var(--soft);margin:0 0 20px}.ab-sig b{color:var(--ink)}
+.ab-txt{color:var(--soft);font-size:17px;margin:0;max-width:58ch}.ab-txt b{color:var(--ink)}
+.ab-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.ab-chips span{font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--white);border:1px solid var(--line);transition:border-color .25s,transform .25s}
+.ab-chips span:hover{border-color:var(--teal);transform:translateY(-2px)}
+@media (max-width:900px){.ab{grid-template-columns:1fr;gap:34px}.ab-pic{max-width:240px}.ab-txt{font-size:16px}}
 @media (max-width:900px){
   .hero,.about{grid-template-columns:1fr}
   .chat{justify-self:center}
@@ -264,21 +277,15 @@ footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;jus
     </div>
 
     <section class="sec" id="about">
-      <div class="eyebrow">About me</div>
-      <h2>Automation expert with a finance background</h2>
-      <div class="about">
+      <div class="ab">
+        <div class="ab-pic rv"><img src="photo.jpg" alt="Tanmoy Chowdhury" width="340" height="340" loading="lazy"></div>
         <div class="rv">
-          <p>I'm <b>Tanmoy Chowdhury</b>, a Business Automation Expert from Chattogram, Bangladesh. At <b>LofiStack</b> I build remote business systems on <b>GoHighLevel, Keap and Kartra</b>, and connect them with <b>Make, Zapier and Kixie</b> so international teams can work without gaps.</p>
-          <p>I also bring a strong finance side. As Financial Compliance Officer and signatory at <b>HomePay</b>, I manage end-to-end payroll for a fully remote team with 100% accuracy. Before that, I handled treasury and bank reconciliation at Digicon Technologies.</p>
-          <p>That mix means I understand both the technology and the business numbers behind it.</p>
+          <div class="eyebrow">About me</div>
+          <q class="ab-q">I don't just build systems. I make sure the numbers add up.</q>
+          <p class="ab-sig">— <b>Tanmoy Chowdhury</b>, Business Automation Expert</p>
+          <p class="ab-txt">I'm <b>Tanmoy</b>, a Business Automation Expert from Chattogram. I build CRM systems and workflows on <b>GoHighLevel, Keap and Kartra</b> for teams in <b>9+ countries</b>. My finance background in payroll and compliance means I understand both the tech and the numbers behind it.</p>
+          <div class="ab-chips"><span>📍 Chattogram, BD</span><span>🎓 MBA, Management</span><span>💼 LofiStack · HomePay</span><span>🗣 Bangla, English</span><span>🌍 9+ countries</span></div>
         </div>
-        <dl class="facts rv">
-          <div><dt>Based in</dt><dd>Chattogram, Bangladesh</dd></div>
-          <div><dt>Current roles</dt><dd>LofiStack · HomePay</dd></div>
-          <div><dt>Education</dt><dd>MBA, Management</dd></div>
-          <div><dt>Languages</dt><dd>Bangla, English</dd></div>
-          <div><dt>Works with</dt><dd>US, Canada &amp; 7+ more</dd></div>
-        </dl>
       </div>
     </section>
 
