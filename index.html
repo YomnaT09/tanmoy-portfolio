@@ -80,22 +80,22 @@ h1,h2,h3{text-wrap:balance}
 .drawer .d-hire{margin-top:6px;text-align:center;background:var(--rose);color:var(--white);font:600 15px var(--display)}
 
 /* hero */
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding-block:72px 84px}
+.hero{display:grid;grid-template-columns:1.2fr .9fr;gap:48px;align-items:center;padding-block:72px 84px}
 .hero h1{font-size:clamp(36px,5.4vw,64px);line-height:1.06}
-.chat{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 60px -30px #0f172a55;overflow:hidden;min-width:0}
-.chat-bar{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
-.chat-bar img{width:38px;height:38px;border-radius:50%;object-fit:cover}
-.chat-bar b{display:block;font:600 15px var(--display);line-height:1.2}
-.chat-bar small{color:#15803d;font-size:12px;font-weight:600}
-.msgs{padding:18px;display:grid;gap:10px;min-height:300px;align-content:start}
-.msg{max-width:82%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.5;animation:pop .45s ease both}
+.chat{background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 50px -30px #0f172a55;overflow:hidden;min-width:0;width:100%;max-width:380px;justify-self:end}
+.chat-bar{display:flex;align-items:center;gap:9px;padding:11px 14px;border-bottom:1px solid var(--line)}
+.chat-bar img{width:32px;height:32px;border-radius:50%;object-fit:cover}
+.chat-bar b{display:block;font:600 14px var(--display);line-height:1.2}
+.chat-bar small{color:#15803d;font-size:11px;font-weight:600}
+.msgs{padding:14px;display:grid;gap:8px;align-content:start}
+.msg{max-width:84%;padding:8px 12px;border-radius:14px;font-size:13px;line-height:1.45;animation:pop .45s ease both}
 .msg.c{background:#f1f5f9;border-bottom-left-radius:4px}
 .msg.t{background:linear-gradient(135deg,var(--teal),#0891b2);color:var(--white);justify-self:end;border-bottom-right-radius:4px}
-.msg small{display:block;font-size:11px;opacity:.7;margin-top:3px}
-.msg:nth-child(1){animation-delay:.6s}.msg:nth-child(2){animation-delay:1.8s}.msg:nth-child(3){animation-delay:3.4s}.msg:nth-child(4){animation-delay:4.8s}
+.msg small{display:block;font-size:10px;opacity:.7;margin-top:2px}
+.msg:nth-child(1){animation-delay:.4s}.msg:nth-child(2){animation-delay:1.5s}.msg:nth-child(3){animation-delay:2.9s}.msg:nth-child(4){animation-delay:4.2s}
 @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
-.typing{display:flex;gap:4px;padding:12px 14px;background:#f1f5f9;border-radius:16px;border-bottom-left-radius:4px;width:max-content;animation:pop .3s ease both 6s}
-.typing i{width:6px;height:6px;border-radius:50%;background:#94a3b8;animation:dot 1.2s infinite}
+.typing{display:flex;gap:4px;padding:10px 12px;background:#f1f5f9;border-radius:14px;border-bottom-left-radius:4px;width:max-content;animation:pop .3s ease both 5.2s}
+.typing i{width:5px;height:5px;border-radius:50%;background:#94a3b8;animation:dot 1.2s infinite}
 .typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
 @keyframes dot{0%,60%,100%{transform:none;opacity:.5}30%{transform:translateY(-4px);opacity:1}}
 .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--line)}
@@ -193,6 +193,7 @@ footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;jus
 
 @media (max-width:900px){
   .hero,.about{grid-template-columns:1fr}
+  .chat{justify-self:center}
   .services{grid-template-columns:repeat(2,minmax(0,1fr))}
   .nav ul,.nav .cv,.nav .cta{display:none}
   .burger{display:grid}
@@ -246,10 +247,10 @@ footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;jus
       <div class="chat in s3" aria-label="Example conversation with a client">
         <div class="chat-bar"><img src="photo.jpg" alt="" width="38" height="38"><div><b>Tanmoy Chowdhury</b><small>● Online · replies fast</small></div></div>
         <div class="msgs">
-          <div class="msg c">Our leads wait hours before anyone calls them back. 😩<small>Client · 10:02</small></div>
-          <div class="msg t">I'll connect your forms to GoHighLevel and send an instant SMS through Kixie.<small>Tanmoy · 10:04</small></div>
-          <div class="msg c">How fast can new leads hear from us?<small>Client · 10:05</small></div>
-          <div class="msg t">Under 60 seconds, every time. No manual steps. ✅<small>Tanmoy · 10:05</small></div>
+          <div class="msg c">Our contacts are spread across 3 spreadsheets. 😵<small>Client · 09:14</small></div>
+          <div class="msg t">I'll move everything into GoHighLevel with tags, pipelines and clean data.<small>Tanmoy · 09:16</small></div>
+          <div class="msg c">Will we lose anything?<small>Client · 09:17</small></div>
+          <div class="msg t">Nothing. Every contact is checked before go-live. ✅<small>Tanmoy · 09:17</small></div>
           <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
         </div>
       </div>
