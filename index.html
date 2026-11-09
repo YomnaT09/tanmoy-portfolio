@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Tanmoy Chowdhury">
+<meta property="og:description" content="Business Automation Expert and Finance Compliance Officer">
+<meta property="og:image" content="photo.jpg">
+<link rel="icon" href="photo.jpg">
+<title>Tanmoy Chowdhury</title>
+<meta name="description" content="Tanmoy Chowdhury, Business Automation Expert and Finance Compliance Officer from Chattogram, Bangladesh.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: Aurora. Light page with slow-moving colour glows; glass nav; hero with photo ring; stats; services grid; tool marquee; timeline; contact band. Single committed light look. */
+:root{
+  --bg:#fbfcfe;--ink:#0f172a;--soft:#55607a;--line:#e3e8f2;--white:#ffffff;
+  --teal:#0ea5a4;--amber:#f59e0b;--rose:#f43f5e;--glass:#ffffffcc;
+  --display:"Outfit",system-ui,sans-serif;--body:"Inter",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+h1,h2,h3{text-wrap:balance}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{position:relative;overflow:hidden}
+
+/* motion */
+@keyframes rise{from{transform:translateY(22px);opacity:0}to{transform:none;opacity:1}}
+.in{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.in.s1{animation-delay:.1s}.in.s2{animation-delay:.2s}.in.s3{animation-delay:.3s}.in.s4{animation-delay:.45s}
+.rv{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.pre{transform:translateY(36px)}
+.caret{display:inline-block;width:2px;height:1em;background:currentColor;vertical-align:-.12em;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* glows */
+.blobs{position:absolute;inset:0 0 auto;height:860px;pointer-events:none;filter:blur(70px);opacity:.5}
+.blobs i{position:absolute;border-radius:50%;animation:float 18s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:420px;height:420px;background:var(--teal);top:-80px;left:-80px}
+.blobs i:nth-child(2){width:360px;height:360px;background:var(--amber);top:60px;right:-60px;animation-duration:22s}
+.blobs i:nth-child(3){width:300px;height:300px;background:var(--rose);top:380px;left:38%;animation-duration:26s;opacity:.6}
+@keyframes float{to{transform:translate(60px,40px) scale(1.15)}}
+.page > :not(.blobs){position:relative}
+
+/* nav */
+.navbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;padding-top:14px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-radius:16px;background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);gap:12px;transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 12px 30px -18px #0f172a55}
+.logo{font:800 20px var(--display);letter-spacing:-.02em;text-decoration:none}
+.logo span{background:linear-gradient(90deg,var(--teal),var(--rose));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-size:14px;font-weight:500;color:var(--soft)}
+.nav ul a{text-decoration:none;position:relative}
+.nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--teal);transform:scaleX(0);transition:transform .3s}
+.nav ul a:hover::after{transform:scaleX(1)}
+.cta{font:600 14px var(--display);padding:9px 18px;border-radius:10px;background:var(--ink);color:var(--white);text-decoration:none;transition:transform .2s;white-space:nowrap}
+.cta:hover{transform:translateY(-2px)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.3fr .9fr;gap:48px;align-items:center;padding-block:72px 84px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;background:var(--glass);border:1px solid var(--line)}
+.pill i{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 #22c55e88}70%,100%{box-shadow:0 0 0 10px #22c55e00}}
+h1{font:700 clamp(40px,6vw,70px)/1.05 var(--display);letter-spacing:-.035em;margin:22px 0 18px}
+.grad{background:linear-gradient(90deg,var(--teal),var(--amber),var(--rose),var(--teal));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 8s linear infinite}
+@keyframes shift{to{background-position:300% 0}}
+.typed{font:500 20px var(--display);color:var(--soft);min-height:1.6em}
+.typed b{color:var(--ink);font-weight:600}
+.lead{color:var(--soft);max-width:50ch;margin:14px 0 0}
+.btns{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+.btn{font:600 15px var(--display);padding:13px 24px;border-radius:12px;text-decoration:none;transition:transform .25s,box-shadow .25s;border:0;cursor:pointer}
+.btn.main{background:linear-gradient(90deg,var(--teal),#0891b2);color:var(--white);box-shadow:0 10px 24px -10px var(--teal)}
+.btn.main:hover{transform:translateY(-3px);box-shadow:0 16px 30px -10px var(--teal)}
+.btn.alt{background:var(--glass);border:1px solid var(--line);color:var(--ink)}
+.btn.alt:hover{transform:translateY(-3px)}
+.portrait{position:relative;width:min(360px,100%);aspect-ratio:1;margin-inline:auto;max-width:100%}
+.ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--teal),var(--amber),var(--rose),var(--teal));animation:spin 10s linear infinite;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px))}
+@keyframes spin{to{transform:rotate(1turn)}}
+.photo{position:absolute;inset:14px;border-radius:50%;overflow:hidden;background:#1f2430}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.badge{position:absolute;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:10px 14px;font:600 14px var(--display);box-shadow:0 12px 30px -12px #0f172a40;animation:bob 4s ease-in-out infinite;white-space:nowrap}
+.badge small{display:block;color:var(--soft);font:500 11px var(--body)}
+.badge.b1{top:6%;left:-10%}.badge.b2{bottom:8%;right:-8%;animation-delay:-2s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px;border-radius:20px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px)}
+.stats div{text-align:center}
+.stats b{display:block;font:700 38px var(--display);font-variant-numeric:tabular-nums;line-height:1.2}
+.stats span{font-size:13px;color:var(--soft)}
+
+/* sections */
+.sec{padding-block:96px 0;scroll-margin-top:90px}
+.eyebrow{font:600 13px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;margin:8px 0 36px;max-width:24ch}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:start}
+.about p{margin:0 0 16px;color:var(--soft);font-size:17px;max-width:62ch}
+.about p b{color:var(--ink)}
+.facts{display:grid;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:24px}
+.facts div{display:flex;justify-content:space-between;gap:12px;font-size:15px;border-bottom:1px dashed var(--line);padding-bottom:12px}
+.facts div:last-child{border:0;padding:0}
+.facts dt{color:var(--soft)}.facts dd{margin:0;font-weight:600;text-align:right}
+
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.svc{padding:24px;border-radius:18px;background:var(--white);border:1px solid var(--line);transition:transform .3s,box-shadow .3s,border-color .3s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 20px 40px -20px #0f172a40;border-color:var(--c)}
+.svc .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:var(--c);color:var(--white);margin-bottom:16px}
+.svc .ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{margin:0 0 6px;font:600 19px var(--display)}
+.svc p{margin:0 0 14px;font-size:14.5px;color:var(--soft)}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#f1f5f9;color:var(--soft)}
+
+.marquee{margin-top:56px;padding-block:18px;border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee div{display:inline-flex;gap:44px;animation:tick 34s linear infinite;font:600 20px var(--display);color:var(--soft)}
+.marquee span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:linear-gradient(var(--teal),var(--rose));margin-right:14px;vertical-align:4px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+.tl{position:relative;display:grid;gap:22px;padding-left:34px}
+.tl::before{content:"";position:absolute;left:8px;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--teal),var(--amber),var(--rose))}
+.job{position:relative;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px 24px;transition:transform .3s,box-shadow .3s}
+.job:hover{transform:translateX(6px);box-shadow:0 18px 36px -22px #0f172a55}
+.job::before{content:"";position:absolute;left:-33px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--teal)}
+.job.now::before{background:var(--teal);box-shadow:0 0 0 6px #0ea5a422}
+.job .top{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;align-items:baseline}
+.job h3{margin:0;font:600 20px var(--display)}
+.job .when{font-size:13px;font-weight:600;color:var(--teal);font-variant-numeric:tabular-nums}
+.job .co{font-size:14px;color:var(--soft);margin:2px 0 10px}
+.job .co a{text-decoration:none;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
+.job .co a:hover{border-color:var(--teal)}
+.job p{margin:0;color:var(--soft);font-size:15px;max-width:72ch}
+.now-tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#15803d;background:#dcfce7;padding:2px 8px;border-radius:999px;margin-left:8px;vertical-align:3px}
+
+.edu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.ed{padding:24px;border-radius:18px;background:var(--white);border:1px solid var(--line);display:flex;gap:16px;align-items:flex-start;transition:transform .3s}
+.ed:hover{transform:translateY(-4px)}
+.ed .yr{font:700 15px var(--display);color:var(--white);background:linear-gradient(135deg,var(--teal),#0891b2);border-radius:12px;padding:10px 12px;font-variant-numeric:tabular-nums}
+.ed h3{margin:0;font:600 19px var(--display)}
+.ed p{margin:2px 0 0;color:var(--soft);font-size:14.5px}
+
+.contact{margin-block:110px 40px;padding:60px 32px;border-radius:28px;text-align:center;color:var(--white);background:linear-gradient(120deg,#0f766e,#0e7490 45%,#be123c);background-size:200% 200%;animation:shift2 12s ease infinite}
+@keyframes shift2{50%{background-position:100% 100%}}
+.contact .eyebrow{color:#ccfbf1}
+.contact h2{color:var(--white);margin:8px auto 14px}
+.contact > p{opacity:.88;margin:0 auto 30px;max-width:48ch}
+.cards{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cc{background:#ffffff1f;border:1px solid #ffffff33;border-radius:16px;padding:14px 18px;text-align:left;min-width:0;display:flex;align-items:center;gap:12px;transition:background .3s}
+.cc:hover{background:#ffffff2e}
+.cc small{display:block;font-size:12px;opacity:.75}
+.cc b{font:600 16px var(--display);word-break:break-all}
+.copy{font:600 12px var(--body);background:var(--white);color:var(--ink);border:0;border-radius:8px;padding:6px 10px;cursor:pointer}
+footer{padding-block:28px 40px;color:var(--soft);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:900px){
+  .hero,.about{grid-template-columns:1fr}
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav ul{display:none}
+  .portrait{width:min(300px,80%)}
+}
+@media (max-width:560px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .services,.edu{grid-template-columns:1fr}
+  .badge.b1{left:-4%}.badge.b2{right:-4%}
+  .contact{padding:44px 20px}
+  .cc{width:100%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv.pre{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="navbar wrap">
+    <header class="nav in" id="nav">
+      <a class="logo" href="#top">Tanmoy<span>.C</span></a>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+      </ul>
+      <a class="cta" href="#contact">Hire me</a>
+    </header>
+  </div>
+
+  <div class="wrap" id="top">
+    <section class="hero">
+      <div>
+        <span class="pill in s1"><i></i>Open to automation projects</span>
+        <h1 class="in s2">Hi, I'm Tanmoy.<br>I help businesses <span class="grad">scale with automation.</span></h1>
+        <div class="typed in s3">I'm a <b id="typed">Business Automation Expert</b><span class="caret"></span></div>
+        <p class="lead in s3">I build CRM systems, workflows and calling setups for teams in the US, Canada and 7+ other countries, so their data flows smoothly and their leads turn into customers.</p>
+        <div class="btns in s4"><a class="btn main" href="#services">See what I do</a><a class="btn alt" href="#contact">Contact me</a></div>
+      </div>
+      <div class="portrait in s3">
+        <div class="ring"></div>
+        <div class="photo"><img src="photo.jpg" alt="Portrait of Tanmoy Chowdhury" width="480" height="480"></div>
+        <div class="badge b1">⚡ GoHighLevel<small>CRM specialist</small></div>
+        <div class="badge b2">🌍 9+ countries<small>clients served</small></div>
+      </div>
+    </section>
+
+    <div class="stats rv">
+      <div><b data-count="3" data-suffix="+">3+</b><span>Years in automation</span></div>
+      <div><b data-count="9" data-suffix="+">9+</b><span>Countries served</span></div>
+      <div><b data-count="100" data-suffix="%">100%</b><span>Payroll accuracy</span></div>
+      <div><b data-count="10" data-suffix="+">10+</b><span>Tools mastered</span></div>
+    </div>
+
+    <section class="sec" id="about">
+      <div class="eyebrow">About me</div>
+      <h2>Automation expert with a finance background</h2>
+      <div class="about">
+        <div class="rv">
+          <p>I'm <b>Tanmoy Chowdhury</b>, a Business Automation Expert from Chattogram, Bangladesh. At <b>LofiStack</b> I build remote business systems on <b>GoHighLevel, Keap and Kartra</b>, and connect them with <b>Make, Zapier and Kixie</b> so international teams can work without gaps.</p>
+          <p>I also bring a strong finance side. As Financial Compliance Officer and signatory at <b>HomePay</b>, I manage end-to-end payroll for a fully remote team with 100% accuracy. Before that, I handled treasury and bank reconciliation at Digicon Technologies.</p>
+          <p>That mix means I understand both the technology and the business numbers behind it.</p>
+        </div>
+        <dl class="facts rv">
+          <div><dt>Based in</dt><dd>Chattogram, Bangladesh</dd></div>
+          <div><dt>Current roles</dt><dd>LofiStack · HomePay</dd></div>
+          <div><dt>Education</dt><dd>MBA, Management</dd></div>
+          <div><dt>Languages</dt><dd>Bangla, English</dd></div>
+          <div><dt>Works with</dt><dd>US, Canada &amp; 7+ more</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="sec" id="services">
+      <div class="eyebrow">What I do</div>
+      <h2>Services that save time and grow revenue</h2>
+      <div class="services">
+        <div class="svc rv" style="--c:#0ea5a4"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h3M8 17h6"/></svg></div><h3>CRM setup</h3><p>Full CRM builds with pipelines, forms, calendars and funnels that convert.</p><div class="tags"><span>GoHighLevel</span><span>Keap</span><span>Kartra</span></div></div>
+        <div class="svc rv" style="--c:#f59e0b"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="18" cy="18" r="3"/><path d="M9 6h5a4 4 0 0 1 4 4v5M15 18h-5a4 4 0 0 1-4-4V9"/></svg></div><h3>Workflow automation</h3><p>Connect your apps so data moves on its own, with no manual copy and paste.</p><div class="tags"><span>Make</span><span>Zapier</span></div></div>
+        <div class="svc rv" style="--c:#f43f5e"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div><h3>Calling &amp; SMS systems</h3><p>Power dialers, SMS follow-ups and AI voice agents for sales teams.</p><div class="tags"><span>Kixie</span><span>Twilio</span><span>Simpletalk.ai</span></div></div>
+        <div class="svc rv" style="--c:#0891b2"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h3>Finance &amp; compliance</h3><p>Payroll management, audits and bank reconciliation for remote-first companies.</p><div class="tags"><span>Payroll</span><span>Audit</span><span>Treasury</span></div></div>
+        <div class="svc rv" style="--c:#8b5cf6"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div><h3>Graphic design</h3><p>Social posts, funnel graphics and brand visuals that match your system.</p><div class="tags"><span>Canva</span><span>Illustrator</span><span>Pixlr</span></div></div>
+        <div class="svc rv" style="--c:#0f172a"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>Remote team support</h3><p>End-to-end operational setup for international teams working across time zones.</p><div class="tags"><span>Onboarding</span><span>SOPs</span></div></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="marquee" aria-hidden="true"><div>
+    <span>GoHighLevel</span><span>Keap</span><span>Kartra</span><span>Make</span><span>Zapier</span><span>Kixie</span><span>Twilio</span><span>Simpletalk.ai</span><span>Canva</span><span>Adobe Illustrator</span><span>Microsoft Office</span>
+    <span>GoHighLevel</span><span>Keap</span><span>Kartra</span><span>Make</span><span>Zapier</span><span>Kixie</span><span>Twilio</span><span>Simpletalk.ai</span><span>Canva</span><span>Adobe Illustrator</span><span>Microsoft Office</span>
+  </div></div>
+
+  <div class="wrap">
+    <section class="sec" id="experience">
+      <div class="eyebrow">Experience</div>
+      <h2>Where I've worked</h2>
+      <div class="tl">
+        <article class="job now rv">
+          <div class="top"><h3>Financial Compliance Officer &amp; Signatory<span class="now-tag">Current</span></h3><span class="when">Apr 2024 – Present</span></div>
+          <div class="co"><a href="https://homepay.io/" target="_blank" rel="noopener">HomePay LLC</a> · Chattogram, Bangladesh</div>
+          <p>Manage end-to-end payroll for the company's entire remote workforce with 100% accuracy. Hold legal signing authority and personally audit financial systems so every payment is compliant, on time and secure.</p>
+        </article>
+        <article class="job now rv">
+          <div class="top"><h3>Associate Automation Engineer<span class="now-tag">Current</span></h3><span class="when">Apr 2023 – Present</span></div>
+          <div class="co"><a href="https://lofistack.com/" target="_blank" rel="noopener">LofiStack</a> · Chattogram, Bangladesh</div>
+          <p>Build remote business systems on GoHighLevel, Keap and Kartra for clients in the US, Canada and 7+ other countries. Connect tools with Make, Zapier and Kixie to keep data flowing and workflows converting.</p>
+        </article>
+        <article class="job rv">
+          <div class="top"><h3>Financial Treasury Analyst</h3><span class="when">Jun 2022 – Mar 2024</span></div>
+          <div class="co"><a href="https://digicontechnologies.com/" target="_blank" rel="noopener">Digicon Technologies Ltd</a> · Dhaka, Bangladesh</div>
+          <p>Recorded and validated all corporate invoices and fiscal documents. Ran bank reconciliations for accurate cash-flow tracking and audit compliance, and sped up the month-end closing process.</p>
+        </article>
+        <article class="job rv">
+          <div class="top"><h3>Market Development Representative</h3><span class="when">Jun 2021 – Aug 2021</span></div>
+          <div class="co"><a href="https://aleshamart.com/" target="_blank" rel="noopener">Aleshamart</a> · Chattogram, Bangladesh</div>
+          <p>Grew the user base through door-to-door outreach, turning offline shoppers into active e-commerce users with face-to-face pitches.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sec" id="education">
+      <div class="eyebrow">Education</div>
+      <h2>Academic background</h2>
+      <div class="edu">
+        <div class="ed rv"><span class="yr">2021</span><div><h3>MBA in Management</h3><p>Govt. City College, Chattogram</p></div></div>
+        <div class="ed rv"><span class="yr">2019</span><div><h3>BBA in Management</h3><p>Govt. City College, Chattogram</p></div></div>
+      </div>
+    </section>
+
+    <section class="contact rv" id="contact">
+      <div class="eyebrow">Let's work together</div>
+      <h2>Need a system that runs itself?</h2>
+      <p>Tell me about your business and the tasks that take up your time. I'll show you what can be automated.</p>
+      <div class="cards">
+        <div class="cc"><div><small>Email</small><b id="mail">chowdhurytanmoy76@gmail.com</b></div><button class="copy" type="button" data-copy="mail">Copy</button></div>
+        <div class="cc"><div><small>Phone / WhatsApp</small><b id="phone">+880 1845-242223</b></div><button class="copy" type="button" data-copy="phone">Copy</button></div>
+        <div class="cc"><div><small>Location</small><b>Chattogram, Bangladesh</b></div></div>
+      </div>
+    </section>
+
+    <footer><span>© 2026 Tanmoy Chowdhury</span><span>Business Automation · Finance Compliance</span></footer>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // counters
+  if(!reduce) document.querySelectorAll("[data-count]").forEach(function(el){
+    var end=+el.dataset.count,suf=el.dataset.suffix||"",t0=null;
+    function step(t){if(!t0)t0=t;var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(end*(1-Math.pow(1-p,3)))+suf;if(p<1)requestAnimationFrame(step);}
+    requestAnimationFrame(step);
+  });
+  // scroll reveal: movement only, content always visible
+  if("IntersectionObserver" in window && !reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.remove("pre");io.unobserve(e.target);}});},{threshold:.12});
+    document.querySelectorAll(".rv").forEach(function(el,i){if(el.getBoundingClientRect().top>innerHeight){el.classList.add("pre");el.style.transitionDelay=(i%3)*80+"ms";io.observe(el);}});
+  }
+  // typing roles
+  var words=["Business Automation Expert","GoHighLevel Specialist","Finance Compliance Officer"],wi=0,ci=words[0].length,del=true,tEl=document.getElementById("typed");
+  function type(){if(del){ci--;if(ci<=0){del=false;wi=(wi+1)%words.length;}}else{ci++;if(ci>=words[wi].length){del=true;tEl.textContent=words[wi];return setTimeout(type,1800);}}tEl.textContent=words[wi].slice(0,Math.max(ci,0))||" ";setTimeout(type,del?35:75);}
+  if(!reduce)setTimeout(type,2400);
+  // nav shadow
+  var nav=document.getElementById("nav");
+  addEventListener("scroll",function(){nav.classList.toggle("scrolled",scrollY>20);},{passive:true});
+  // copy buttons
+  document.querySelectorAll("[data-copy]").forEach(function(b){
+    b.addEventListener("click",function(){
+      var el=document.getElementById(b.dataset.copy),txt=el.textContent;
+      function done(){b.textContent="Copied";setTimeout(function(){b.textContent="Copy";},1500);}
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);}
+      try{navigator.clipboard.writeText(txt).then(done,sel);}catch(e){sel();}
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
