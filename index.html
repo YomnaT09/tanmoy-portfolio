@@ -245,14 +245,15 @@ h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;marg
 .tags{display:flex;gap:6px;flex-wrap:wrap}
 .tags span{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:#f1f5f9;color:var(--soft)}
 
-.rb{position:relative;height:190px;margin-top:56px;display:grid;place-items:center;overflow:hidden}
-.rib{position:absolute;left:-5%;width:110%;padding-block:14px;overflow:hidden;box-shadow:0 20px 40px -24px #0f172a88}
-.rib-a{background:linear-gradient(90deg,#0f766e,#0e7490);transform:rotate(-3deg);z-index:2}
-.rib-b{background:var(--card,#fff);border-block:1px solid var(--line);transform:rotate(3deg)}
-.rib div{display:flex;width:max-content;gap:28px;animation:tick 36s linear infinite;font:700 20px var(--display);white-space:nowrap}
-.rib-a div{color:#fff}.rib-b div{animation-direction:reverse;color:var(--soft)}.rib i{font-style:normal;color:var(--amber)}
-@media (max-width:600px){.rb{height:170px}.rib div{font-size:16px;gap:20px}.rib-a{transform:rotate(-4deg) translateY(-14px)}.rib-b{transform:rotate(4deg) translateY(14px)}}
-@media (prefers-reduced-motion:reduce){.rib div{animation:none}}
+.bo{margin-top:72px}.bo .eyebrow{display:block;margin-bottom:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:0}
+.bo-fade{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.bo-row{display:flex;width:max-content;gap:48px;padding-block:10px;animation:tick 50s linear infinite}.bo-fade:hover .bo-row{animation-play-state:paused}
+.bo-row span{font:800 76px/1.05 var(--display);letter-spacing:-.03em;color:var(--bg);-webkit-text-stroke:3px var(--soft);paint-order:stroke fill;white-space:nowrap;transition:-webkit-text-stroke-color .4s}
+.bo-row span:hover{-webkit-text-stroke-color:transparent;color:transparent;background:linear-gradient(90deg,var(--teal),var(--amber),var(--rose));-webkit-background-clip:text;background-clip:text}
+.bo-row i{font:800 50px/1 var(--display);font-style:normal;color:var(--rose);align-self:center}
+@media (max-width:600px){.bo{margin-top:56px}.bo-row{gap:28px}.bo-row span{font-size:46px}.bo-row i{font-size:30px}}
+@media (prefers-reduced-motion:reduce){.bo-row{animation:none}}
 @keyframes tick{to{transform:translateX(-50%)}}
 
 .tl{position:relative;display:grid;gap:22px;padding-left:34px}
@@ -426,9 +427,10 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
     </section>
   </div>
 
-  <div class="rb" aria-label="Tools I work with: GoHighLevel, Keap, Kartra, Make, Zapier, Kixie, Twilio, Simpletalk.ai, Canva, Adobe Illustrator, Microsoft Office" role="img">
-    <div class="rib rib-b" aria-hidden="true"><div><span>GoHighLevel</span><i>✦</i><span>Keap</span><i>✦</i><span>Kartra</span><i>✦</i><span>Make</span><i>✦</i><span>Zapier</span><i>✦</i><span>Kixie</span><i>✦</i><span>Twilio</span><i>✦</i><span>Simpletalk.ai</span><i>✦</i><span>Canva</span><i>✦</i><span>Adobe Illustrator</span><i>✦</i><span>Microsoft Office</span><i>✦</i><span>GoHighLevel</span><i>✦</i><span>Keap</span><i>✦</i><span>Kartra</span><i>✦</i><span>Make</span><i>✦</i><span>Zapier</span><i>✦</i><span>Kixie</span><i>✦</i><span>Twilio</span><i>✦</i><span>Simpletalk.ai</span><i>✦</i><span>Canva</span><i>✦</i><span>Adobe Illustrator</span><i>✦</i><span>Microsoft Office</span><i>✦</i></div></div>
-    <div class="rib rib-a" aria-hidden="true"><div><span>Microsoft Office</span><i>✦</i><span>Adobe Illustrator</span><i>✦</i><span>Canva</span><i>✦</i><span>Simpletalk.ai</span><i>✦</i><span>Twilio</span><i>✦</i><span>Kixie</span><i>✦</i><span>Zapier</span><i>✦</i><span>Make</span><i>✦</i><span>Kartra</span><i>✦</i><span>Keap</span><i>✦</i><span>GoHighLevel</span><i>✦</i><span>Microsoft Office</span><i>✦</i><span>Adobe Illustrator</span><i>✦</i><span>Canva</span><i>✦</i><span>Simpletalk.ai</span><i>✦</i><span>Twilio</span><i>✦</i><span>Kixie</span><i>✦</i><span>Zapier</span><i>✦</i><span>Make</span><i>✦</i><span>Kartra</span><i>✦</i><span>Keap</span><i>✦</i><span>GoHighLevel</span><i>✦</i></div></div>
+  <div class="bo">
+    <div class="wrap"><span class="eyebrow">Tools I work with</span></div>
+    <p class="sr">GoHighLevel, Keap, Kartra, Make, Zapier, Kixie, Twilio, Simpletalk.ai, Canva, Adobe Illustrator, Microsoft Office</p>
+    <div class="bo-fade" aria-hidden="true"><div class="bo-row"><span>GoHighLevel</span><i>✦</i><span>Keap</span><i>✦</i><span>Kartra</span><i>✦</i><span>Make</span><i>✦</i><span>Zapier</span><i>✦</i><span>Kixie</span><i>✦</i><span>Twilio</span><i>✦</i><span>Simpletalk.ai</span><i>✦</i><span>Canva</span><i>✦</i><span>Adobe Illustrator</span><i>✦</i><span>Microsoft Office</span><i>✦</i><span>GoHighLevel</span><i>✦</i><span>Keap</span><i>✦</i><span>Kartra</span><i>✦</i><span>Make</span><i>✦</i><span>Zapier</span><i>✦</i><span>Kixie</span><i>✦</i><span>Twilio</span><i>✦</i><span>Simpletalk.ai</span><i>✦</i><span>Canva</span><i>✦</i><span>Adobe Illustrator</span><i>✦</i><span>Microsoft Office</span><i>✦</i></div></div>
   </div>
 
   <div class="wrap">
