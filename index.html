@@ -220,6 +220,17 @@ h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;marg
 .r.on .go{background:var(--c);border-color:var(--c);color:#fff;transform:rotate(-45deg)}
 .r:focus-visible{outline:2px solid var(--c);outline-offset:2px}
 .r .bar{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--c)}
+/* Experience: metric cards */
+.xm-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.xm{background:var(--card,#fff);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s}
+.xm:hover{transform:translateY(-6px);border-color:var(--c);box-shadow:0 24px 40px -28px var(--c)}
+.xm::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:radial-gradient(color-mix(in srgb,var(--c) 22%,transparent),transparent 70%);pointer-events:none}
+.xm-m{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}.xm-m b{font:800 40px/1 var(--display);color:var(--c)}.xm-m span{font-size:13.5px;color:var(--soft)}
+.xm-row{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}.xm h3{margin:0;font:600 19px/1.3 var(--display)}
+.xm-when{font:600 13px var(--display);color:var(--teal);white-space:nowrap}
+.xm-co{font-size:14px;color:var(--soft);margin-top:2px}.xm-co a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}.xm-co a:hover{border-color:var(--c)}
+.xm p{margin:10px 0 14px;font-size:14.5px;color:var(--soft)}
+@media (max-width:760px){.xm-grid{grid-template-columns:1fr}.xm-m b{font-size:32px}.xm{padding:20px}}
 @media (max-width:900px){.fl{grid-template-columns:1fr}
 .fp{padding:22px}
 .fp h3{font-size:23px}
@@ -437,26 +448,34 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
     <section class="sec" id="experience">
       <div class="eyebrow">Experience</div>
       <h2>Where I've worked</h2>
-      <div class="tl">
-        <article class="job now rv">
-          <div class="top"><h3>Financial Compliance Officer &amp; Signatory<span class="now-tag">Current</span></h3><span class="when">Apr 2024 – Present</span></div>
-          <div class="co"><a href="https://homepay.io/" target="_blank" rel="noopener">HomePay LLC</a> · Chattogram, Bangladesh</div>
+      <div class="xm-grid">
+        <article class="xm rv" style="--c:#0891b2">
+          <div class="xm-m"><b>100%</b><span>payroll accuracy</span></div>
+          <div class="xm-row"><h3>Financial Compliance Officer &amp; Signatory<span class="now-tag">Current</span></h3><span class="xm-when">Apr 2024 – Present</span></div>
+          <div class="xm-co"><a href="https://homepay.io/" target="_blank" rel="noopener">HomePay LLC</a> · Chattogram, Bangladesh</div>
           <p>Manage end-to-end payroll for the company's entire remote workforce with 100% accuracy. Hold legal signing authority and personally audit financial systems so every payment is compliant, on time and secure.</p>
+          <div class="tags"><span>Payroll</span><span>Audit</span><span>Compliance</span></div>
         </article>
-        <article class="job now rv">
-          <div class="top"><h3>Associate Automation Engineer<span class="now-tag">Current</span></h3><span class="when">Apr 2023 – Present</span></div>
-          <div class="co"><a href="https://lofistack.com/" target="_blank" rel="noopener">LofiStack</a> · Chattogram, Bangladesh</div>
+        <article class="xm rv" style="--c:#0ea5a4">
+          <div class="xm-m"><b>9+</b><span>countries served</span></div>
+          <div class="xm-row"><h3>Associate Automation Engineer<span class="now-tag">Current</span></h3><span class="xm-when">Apr 2023 – Present</span></div>
+          <div class="xm-co"><a href="https://lofistack.com/" target="_blank" rel="noopener">LofiStack</a> · Chattogram, Bangladesh</div>
           <p>Build remote business systems on GoHighLevel, Keap and Kartra for clients in the US, Canada and 7+ other countries. Connect tools with Make, Zapier and Kixie to keep data flowing and workflows converting.</p>
+          <div class="tags"><span>GoHighLevel</span><span>Keap</span><span>Make</span><span>Zapier</span></div>
         </article>
-        <article class="job rv">
-          <div class="top"><h3>Financial Treasury Analyst</h3><span class="when">Jun 2022 – Mar 2024</span></div>
-          <div class="co"><a href="https://digicontechnologies.com/" target="_blank" rel="noopener">Digicon Technologies Ltd</a> · Dhaka, Bangladesh</div>
+        <article class="xm rv" style="--c:#f59e0b">
+          <div class="xm-m"><b>21 mo</b><span>treasury &amp; audit</span></div>
+          <div class="xm-row"><h3>Financial Treasury Analyst</h3><span class="xm-when">Jun 2022 – Mar 2024</span></div>
+          <div class="xm-co"><a href="https://digicontechnologies.com/" target="_blank" rel="noopener">Digicon Technologies Ltd</a> · Dhaka, Bangladesh</div>
           <p>Recorded and validated all corporate invoices and fiscal documents. Ran bank reconciliations for accurate cash-flow tracking and audit compliance, and sped up the month-end closing process.</p>
+          <div class="tags"><span>Reconciliation</span><span>Invoices</span><span>Treasury</span></div>
         </article>
-        <article class="job rv">
-          <div class="top"><h3>Market Development Representative</h3><span class="when">Jun 2021 – Aug 2021</span></div>
-          <div class="co"><a href="https://aleshamart.com/" target="_blank" rel="noopener">Aleshamart</a> · Chattogram, Bangladesh</div>
+        <article class="xm rv" style="--c:#f43f5e">
+          <div class="xm-m"><b>1:1</b><span>door-to-door pitches</span></div>
+          <div class="xm-row"><h3>Market Development Representative</h3><span class="xm-when">Jun 2021 – Aug 2021</span></div>
+          <div class="xm-co"><a href="https://aleshamart.com/" target="_blank" rel="noopener">Aleshamart</a> · Chattogram, Bangladesh</div>
           <p>Grew the user base through door-to-door outreach, turning offline shoppers into active e-commerce users with face-to-face pitches.</p>
+          <div class="tags"><span>Outreach</span><span>E-commerce</span></div>
         </article>
       </div>
     </section>
