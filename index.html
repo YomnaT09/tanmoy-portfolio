@@ -231,6 +231,23 @@ h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;marg
 .xm-co{font-size:14px;color:var(--soft);margin-top:2px}.xm-co a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}.xm-co a:hover{border-color:var(--c)}
 .xm p{margin:10px 0 14px;font-size:14.5px;color:var(--soft)}
 @media (max-width:760px){.xm-grid{grid-template-columns:1fr}.xm-m b{font-size:32px}.xm{padding:20px}}
+/* Contact: envelope */
+#contact svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.ev-p{color:var(--soft);font-size:17px;max-width:42ch;margin:0}
+.ev-sl{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.ev-sl a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:var(--card,#fff);text-decoration:none;color:var(--ink);font:600 14px var(--display);transition:border-color .3s,transform .3s}.ev-sl a svg{color:var(--c)}.ev-sl a:hover{border-color:var(--c);transform:translateY(-3px)}
+.ev-ph{margin:16px 0 0;font-size:14px;color:var(--soft)}.ev-ph a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1px solid var(--line)}
+.env{position:relative;width:min(440px,100%);aspect-ratio:1.55;margin:120px auto 18px;cursor:pointer;outline:none}
+.env-back{position:absolute;inset:0;background:linear-gradient(150deg,#0f766e,#0e7490);border-radius:10px 10px 16px 16px;box-shadow:0 30px 50px -30px #000}
+.env-letter{position:absolute;left:6%;right:6%;top:8%;height:86%;background:#fff;color:#0f172a;border-radius:10px;padding:18px 20px;transition:transform .7s cubic-bezier(.2,.7,.2,1) .15s;z-index:1}
+.env-letter small{font:600 11px var(--display);letter-spacing:.1em;text-transform:uppercase;color:#0e7490}.env-letter b{display:block;font:700 20px var(--display);margin:6px 0 4px}.env-letter span{font-size:13.5px;color:#55607a;display:block}
+.env-letter a{display:inline-flex;gap:8px;align-items:center;margin-top:12px;background:#0f172a;color:#fff;text-decoration:none;font:600 13.5px var(--display);padding:9px 14px;border-radius:10px}.env-letter a svg{width:16px;height:16px}
+.env-front{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(150deg,#0e7490,#0f766e);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-radius:0 0 16px 16px}
+.env-flap{position:absolute;left:0;right:0;top:0;height:58%;z-index:3;transform-origin:top;transition:transform .6s cubic-bezier(.2,.7,.2,1),z-index 0s .3s;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(#14b8a6,#0e7490)}
+.env-stamp{position:absolute;right:16px;bottom:14px;z-index:4;width:54px;height:62px;border:3px dotted #fff8;border-radius:6px;overflow:hidden;background:#fff}.env-stamp img{width:100%;height:100%;object-fit:cover;display:block}
+.env.open .env-flap,.env:hover .env-flap,.env:focus-visible .env-flap{transform:rotateX(180deg);z-index:0}.env.open .env-letter,.env:hover .env-letter,.env:focus-visible .env-letter{transform:translateY(-62%)}
+.env-cap{text-align:center;font:600 12px var(--display);color:var(--soft)}
+footer{align-items:center}.ft-soc{display:flex;gap:8px}.ft-soc a{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--soft);transition:.3s}.ft-soc a:hover{color:#fff;background:var(--c);border-color:var(--c);transform:translateY(-3px)}.ft-soc svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:900px){.ev{grid-template-columns:1fr}.env{margin-top:150px}}
 @media (max-width:900px){.fl{grid-template-columns:1fr}
 .fp{padding:22px}
 .fp h3{font-size:23px}
@@ -489,18 +506,28 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
       </div>
     </section>
 
-    <section class="contact rv" id="contact">
-      <div class="eyebrow">Let's work together</div>
-      <h2>Need a system that runs itself?</h2>
-      <p>Tell me about your business and the tasks that take up your time. I'll show you what can be automated.</p>
-      <div class="cards">
-        <div class="cc"><div><small>Email</small><b id="mail">chowdhurytanmoy76@gmail.com</b></div><button class="copy" type="button" data-copy="mail">Copy</button></div>
-        <div class="cc"><div><small>Phone / WhatsApp</small><b id="phone">+880 1845-242223</b></div><button class="copy" type="button" data-copy="phone">Copy</button></div>
-        <div class="cc"><div><small>Location</small><b>Chattogram, Bangladesh</b></div></div>
+    <section class="sec" id="contact">
+      <div class="ev">
+        <div class="rv">
+          <div class="eyebrow">Let's work together</div>
+          <h2>Need a system that runs itself?</h2>
+          <p class="ev-p">Tell me about your business and the tasks that take up your time. I'll show you what can be automated.</p>
+          <div class="ev-sl"><a href="https://wa.me/8801845242223" style="--c:#22c55e" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-1.9-1-1 .9a4 4 0 0 1-2.3-2.3l.9-1-1-1.9z"/></svg>WhatsApp</a><a href="https://www.linkedin.com/in/tandhury/" style="--c:#0a66c2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.8v.2M11.5 16v-3.2a2 2 0 0 1 4 0V16M11.5 10.5V16"/></svg>LinkedIn</a><a href="https://www.facebook.com/tomoy09/" style="--c:#1877f2" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M15.5 8H14a2 2 0 0 0-2 2v11M10 13h5"/></svg>Facebook</a></div>
+          <p class="ev-ph">or call <a href="tel:+8801845242223">+880 1845-242223</a></p>
+        </div>
+        <div class="rv">
+          <div class="env" id="env" tabindex="0" role="button" aria-label="Open the envelope">
+            <div class="env-back"></div>
+            <div class="env-letter"><small>To: Tanmoy Chowdhury</small><b>Hi Tanmoy, I have a project…</b><span>chowdhurytanmoy76@gmail.com</span><a href="mailto:chowdhurytanmoy76@gmail.com"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Write the email</a></div>
+            <div class="env-front"></div><div class="env-flap"></div>
+            <span class="env-stamp"><img src="photo.jpg" alt="" width="54" height="62" loading="lazy"></span>
+          </div>
+          <div class="env-cap">Hover (or tap) the envelope</div>
+        </div>
       </div>
     </section>
 
-    <footer><span>© 2026 Tanmoy Chowdhury</span><span>Business Automation · Finance Compliance</span></footer>
+    <footer><span>© 2026 Tanmoy Chowdhury</span><div class="ft-soc"><a href="mailto:chowdhurytanmoy76@gmail.com" style="--c:#0ea5a4" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a><a href="https://wa.me/8801845242223" style="--c:#22c55e" aria-label="WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1.2-1.4-1.9-1-1 .9a4 4 0 0 1-2.3-2.3l.9-1-1-1.9z"/></svg></a><a href="https://www.linkedin.com/in/tandhury/" style="--c:#0a66c2" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10.5V16M8 7.8v.2M11.5 16v-3.2a2 2 0 0 1 4 0V16M11.5 10.5V16"/></svg></a><a href="https://www.facebook.com/tomoy09/" style="--c:#1877f2" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M15.5 8H14a2 2 0 0 0-2 2v11M10 13h5"/></svg></a></div><span>Business Automation · Finance Compliance</span></footer>
   </div>
 </div>
 
@@ -561,6 +588,7 @@ st.addEventListener("mouseenter",function(){hover=true});st.addEventListener("mo
 function f(ts){var dt=last?Math.min(50,ts-last):16;last=ts;if(!drag){if(Math.abs(vel)>0.002){pos+=vel*dt;vel*=Math.pow(0.94,dt/16)}else{vel=0;if(!hover&&!red&&ts-idle>900)pos-=0.012*dt}}
 var r=R,best=1e9,bi=0;its.forEach(function(e,i){var t=((ang[i]+pos)%360+540)%360-180,c=Math.cos(t*Math.PI/180);e.style.transform="translate(-50%,-50%) rotateY("+t+"deg) translateZ("+r+"px)";e.style.opacity=c>0.05?(0.2+0.8*c*c).toFixed(2):0;if(Math.abs(t)<best){best=Math.abs(t);bi=i}});
 if(bi!==act){if(its[act])its[act].classList.remove("on");its[bi].classList.add("on");act=bi}requestAnimationFrame(f)}requestAnimationFrame(f)})();
+(function(){var e=document.getElementById("env");if(!e)return;e.addEventListener("click",function(x){if(x.target.closest("a"))return;e.classList.toggle("open")});e.addEventListener("keydown",function(x){if(x.key==="Enter"||x.key===" "){x.preventDefault();e.classList.toggle("open")}})})();
 </script>
 
 </body>
