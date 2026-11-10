@@ -247,6 +247,18 @@ h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;marg
 .env.open .env-flap,.env:hover .env-flap,.env:focus-visible .env-flap{transform:rotateX(180deg);z-index:0}.env.open .env-letter,.env:hover .env-letter,.env:focus-visible .env-letter{transform:translateY(-62%)}
 .env-cap{text-align:center;font:600 12px var(--display);color:var(--soft)}
 footer{align-items:center}.ft-soc{display:flex;gap:8px}.ft-soc a{width:38px;height:38px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;color:var(--soft);transition:.3s}.ft-soc a:hover{color:#fff;background:var(--c);border-color:var(--c);transform:translateY(-3px)}.ft-soc svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+/* Certifications: shuffle deck */
+.cs{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}.cs-p{color:var(--soft);margin:-8px 0 22px;max-width:40ch}
+.cs-ctr{font:800 54px/1 var(--display);letter-spacing:-.03em}.cs-ctr span{font-size:20px;color:var(--soft)}
+.cs-dots{display:flex;gap:6px;margin-top:18px}.cs-dots i{width:8px;height:8px;border-radius:9px;background:var(--line);transition:.4s}.cs-dots i.on{width:26px;background:var(--teal)}
+.cs-nav{display:flex;gap:10px;margin-top:18px}.cs-nav button{all:unset;cursor:pointer;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:.3s}.cs-nav button:hover,.cs-nav button:focus-visible{border-color:var(--teal);color:var(--teal)}
+#certifications svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.cs-stk{position:relative;height:300px;max-width:440px;width:100%;margin:0 auto}
+.cs-card{position:absolute;inset:0;background:#fffdf7;color:#1e293b;border-radius:14px;padding:26px 28px;box-shadow:0 26px 40px -26px #000a;border:1px solid #e9dfc6;cursor:pointer;display:flex;flex-direction:column;gap:6px;overflow:hidden;transform:translate(calc(var(--p)*16px),calc(var(--p)*-14px)) rotate(calc(var(--p)*3deg)) scale(calc(1 - var(--p)*.05));z-index:calc(10 - var(--p));opacity:calc(1 - var(--p)*.22);transition:transform .7s cubic-bezier(.2,.7,.2,1),opacity .5s}
+.cs-card::before{content:"";position:absolute;left:0;right:0;top:0;height:8px;background:var(--c)}.cs-card small{font:600 11px var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--c)}.cs-card h3{margin:0;font:700 24px/1.2 var(--display);max-width:80%}.cs-o{color:#64748b;font-size:14px}.cs-w{margin-top:auto;font:600 13px var(--display);color:#64748b}.cs-id{font:500 11px monospace;color:#94a3b8}
+.cs-seal{position:absolute;right:24px;bottom:22px;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#fde68a,#d97706);display:grid;place-items:center;color:#fff;box-shadow:0 0 0 5px #fde68a55}#certifications .cs-seal svg{width:30px;height:30px}
+.cs-card.out{transform:translate(-120%,30px) rotate(-22deg)!important;opacity:0!important;transition:transform .45s ease-in,opacity .45s}
+@media (max-width:900px){.cs{grid-template-columns:1fr;gap:56px}.cs-stk{height:260px;width:88%;margin:0}.cs-card h3{font-size:20px}.cs-ctr{font-size:40px}}
 @media (max-width:900px){.ev{grid-template-columns:1fr}.env{margin-top:150px}}
 @media (max-width:900px){.fl{grid-template-columns:1fr}
 .fp{padding:22px}
@@ -382,6 +394,7 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
         <li><a href="#services">Services</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#certifications">Certifications</a></li>
       </ul>
       <div class="right">
         <button class="tgl" id="tgl" type="button" aria-label="Switch to dark mode"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.2M12 19.8V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.2M19.8 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg></button>
@@ -392,7 +405,7 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
       <span class="prog" id="prog"></span>
     </header>
     <nav class="drawer" id="drawer" aria-label="Mobile menu">
-      <a href="#about">About</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="cv.pdf" target="_blank" rel="noopener">Download CV</a><a class="d-hire" href="#contact">Hire me</a>
+      <a href="#about">About</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#certifications">Certifications</a><a href="cv.pdf" target="_blank" rel="noopener">Download CV</a><a class="d-hire" href="#contact">Hire me</a>
     </nav>
   </div>
 
@@ -506,6 +519,20 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
       </div>
     </section>
 
+        <section class="sec" id="certifications">
+      <div class="cs">
+        <div class="rv">
+          <div class="eyebrow">Certifications</div>
+          <h2>Always learning</h2>
+          <p class="cs-p">Courses and certificates I picked up along the way, from Excel and HR to marketing and automation.</p>
+          <div class="cs-ctr" id="csCtr" aria-live="polite">01<span> / 05</span></div>
+          <div class="cs-dots" id="csDots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+          <div class="cs-nav"><button type="button" id="csPrev" aria-label="Previous certificate"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" id="csNext" aria-label="Next certificate"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+        </div>
+        <div class="rv"><div class="cs-stk" id="csStk"><div class="cs-card" style="--c:#0ea5a4;--p:0"><small>Certificate · Automation</small><h3>Automation Certificate</h3><div class="cs-o">LofiStack</div><div class="cs-id">Credential ID 6aa02325da919efad86578b5</div><div class="cs-w">Issued Sep 2026</div><span class="cs-seal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span></div><div class="cs-card" style="--c:#f43f5e;--p:1"><small>Certificate · Marketing</small><h3>Marketing Representative</h3><div class="cs-o">Aleshamart</div><div class="cs-w">Mar 2021 – May 2021</div><span class="cs-seal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span></div><div class="cs-card" style="--c:#f59e0b;--p:2"><small>Certificate · Digital Marketing</small><h3>Digital Marketing</h3><div class="cs-o">Learning &amp; Earning Development Project (LEDP)</div><div class="cs-w">Jan 2021 – May 2021</div><span class="cs-seal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span></div><div class="cs-card" style="--c:#16a34a;--p:3"><small>Certificate · Microsoft Excel</small><h3>Excel Skills for Business</h3><div class="cs-o">Coursera</div><div class="cs-w">Jul 2020 – Sep 2020</div><span class="cs-seal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span></div><div class="cs-card" style="--c:#2563eb;--p:4"><small>Certificate · HR</small><h3>Preparing to Manage Human Resources</h3><div class="cs-o">Coursera</div><div class="cs-w">Mar 2020 – Jul 2020</div><span class="cs-seal"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span></div></div></div>
+      </div>
+    </section>
+
     <section class="sec" id="contact">
       <div class="ev">
         <div class="rv">
@@ -588,6 +615,12 @@ function f(ts){var dt=last?Math.min(50,ts-last):16;last=ts;if(!drag){if(Math.abs
 var r=R,best=1e9,bi=0;its.forEach(function(e,i){var t=((ang[i]+pos)%360+540)%360-180,c=Math.cos(t*Math.PI/180);e.style.transform="translate(-50%,-50%) rotateY("+t+"deg) translateZ("+r+"px)";e.style.opacity=c>0.05?(0.2+0.8*c*c).toFixed(2):0;if(Math.abs(t)<best){best=Math.abs(t);bi=i}});
 if(bi!==act){if(its[act])its[act].classList.remove("on");its[bi].classList.add("on");act=bi}requestAnimationFrame(f)}requestAnimationFrame(f)})();
 (function(){var e=document.getElementById("env");if(!e)return;e.addEventListener("click",function(x){if(x.target.closest("a"))return;e.classList.toggle("open")});e.addEventListener("keydown",function(x){if(x.key==="Enter"||x.key===" "){x.preventDefault();e.classList.toggle("open")}})})();
+(function(){var s=document.getElementById("csStk");if(!s)return;var K=[].slice.call(s.querySelectorAll(".cs-card")),n=K.length,cur=0,busy=0,hov=0,vis=0,D=document.querySelectorAll("#csDots i"),ct=document.getElementById("csCtr"),rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function set(){K.forEach(function(k,i){k.style.setProperty("--p",(i-cur+n)%n)});ct.innerHTML="0"+(cur+1)+"<span> / 0"+n+"</span>";D.forEach(function(d,i){d.classList.toggle("on",i===cur)})}
+function nx(){if(busy)return;busy=1;var t=K[cur];t.classList.add("out");setTimeout(function(){cur=(cur+1)%n;t.style.transition="none";set();t.classList.remove("out");t.offsetWidth;t.style.transition="";busy=0},rm?0:450)}
+document.getElementById("csNext").onclick=nx;document.getElementById("csPrev").onclick=function(){cur=(cur-1+n)%n;set()};s.onclick=nx;s.onmouseenter=function(){hov=1};s.onmouseleave=function(){hov=0};
+if(window.IntersectionObserver)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(s);else vis=1;
+if(!rm)setInterval(function(){if(!hov&&vis&&!document.hidden)nx()},3200)})();
 </script>
 
 </body>
