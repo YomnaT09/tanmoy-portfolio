@@ -533,13 +533,14 @@ html[data-theme=dark] :is(.chat,.job,.facts,.badge,.drawer){box-shadow:0 24px 50
 
 (function(){var b=document.getElementById("tgl"),h=document.documentElement;if(!b)return;function sync(){var d=h.getAttribute("data-theme")==="dark";b.setAttribute("aria-pressed",d);b.setAttribute("aria-label",d?"Switch to light mode":"Switch to dark mode")}sync();b.addEventListener("click",function(){var t=h.getAttribute("data-theme")==="dark"?"light":"dark";h.setAttribute("data-theme",t);try{localStorage.setItem("theme",t)}catch(e){}sync()})})();
 
-(function(){var st=document.getElementById("ringSt");if(!st)return;var its=[].slice.call(st.querySelectorAll(".rg-it")),a=360/its.length,act=-1,pos=0,vel=0,drag=false,lx=0,lt=0,idle=-9e9,hover=false,last=0,red=matchMedia("(prefers-reduced-motion: reduce)").matches;
+(function(){var st=document.getElementById("ringSt");if(!st)return;var its=[].slice.call(st.querySelectorAll(".rg-it")),ang=[],R=300,act=-1,pos=0,vel=0,drag=false,lx=0,lt=0,idle=-9e9,hover=false,last=0,red=matchMedia("(prefers-reduced-motion: reduce)").matches;
 st.addEventListener("pointerdown",function(e){drag=true;lx=e.clientX;lt=performance.now();vel=0;st.setPointerCapture(e.pointerId);st.classList.add("grab")});
 st.addEventListener("pointermove",function(e){if(!drag)return;var n=performance.now(),d=(e.clientX-lx)*0.25;pos+=d;vel=d/Math.max(8,n-lt);lx=e.clientX;lt=n});
 function up(){if(!drag)return;drag=false;st.classList.remove("grab");idle=performance.now()}st.addEventListener("pointerup",up);st.addEventListener("pointercancel",up);
+function lay(){var gap=st.clientWidth<600?34:54,ws=its.map(function(e){return e.offsetWidth+gap}),C=ws.reduce(function(s,x){return s+x},0),acc=0;R=C/(2*Math.PI);ang=ws.map(function(w){var c=acc+w/2;acc+=w;return 360*c/C})}lay();addEventListener("resize",lay);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(lay);
 st.addEventListener("mouseenter",function(){hover=true});st.addEventListener("mouseleave",function(){hover=false});
 function f(ts){var dt=last?Math.min(50,ts-last):16;last=ts;if(!drag){if(Math.abs(vel)>0.002){pos+=vel*dt;vel*=Math.pow(0.94,dt/16)}else{vel=0;if(!hover&&!red&&ts-idle>900)pos-=0.012*dt}}
-var r=st.clientWidth<600?205:360,best=1e9,bi=0;its.forEach(function(e,i){var t=((i*a+pos)%360+540)%360-180,c=Math.cos(t*Math.PI/180);e.style.transform="translate(-50%,-50%) rotateY("+t+"deg) translateZ("+r+"px)";e.style.opacity=c>0.05?(0.2+0.8*c*c).toFixed(2):0;if(Math.abs(t)<best){best=Math.abs(t);bi=i}});
+var r=R,best=1e9,bi=0;its.forEach(function(e,i){var t=((ang[i]+pos)%360+540)%360-180,c=Math.cos(t*Math.PI/180);e.style.transform="translate(-50%,-50%) rotateY("+t+"deg) translateZ("+r+"px)";e.style.opacity=c>0.05?(0.2+0.8*c*c).toFixed(2):0;if(Math.abs(t)<best){best=Math.abs(t);bi=i}});
 if(bi!==act){if(its[act])its[act].classList.remove("on");its[bi].classList.add("on");act=bi}requestAnimationFrame(f)}requestAnimationFrame(f)})();
 </script>
 
