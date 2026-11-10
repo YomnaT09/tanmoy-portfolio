@@ -252,7 +252,7 @@ h2{font:700 clamp(30px,4.4vw,46px)/1.1 var(--display);letter-spacing:-.03em;marg
 .bo-row span{font:800 30px/1.15 var(--display);letter-spacing:-.03em;color:var(--bg);-webkit-text-stroke:2px var(--soft);paint-order:stroke fill;white-space:nowrap;transition:-webkit-text-stroke-color .4s}
 .bo-row span:hover{-webkit-text-stroke-color:transparent;color:transparent;background:linear-gradient(90deg,var(--teal),var(--amber),var(--rose));-webkit-background-clip:text;background-clip:text}
 .bo-row i{font:800 18px/1 var(--display);font-style:normal;color:var(--rose);align-self:center}
-html:not([data-theme=dark]) .bo-row span{-webkit-text-stroke:0;color:#7b8699;font-weight:700}html:not([data-theme=dark]) .bo-row span:hover{color:transparent}
+html:not([data-theme=dark]) .bo-row span{-webkit-text-stroke:0;color:transparent;background:linear-gradient(90deg,#0f766e,#0e7490 50%,#be123c);-webkit-background-clip:text;background-clip:text}html:not([data-theme=dark]) .bo-row span:hover{background:linear-gradient(90deg,var(--teal),var(--amber),var(--rose));-webkit-background-clip:text;background-clip:text}
 @media (max-width:600px){.bo{margin-top:56px}.bo-row{gap:16px}.bo-row span{font-size:22px}.bo-row i{font-size:14px}}
 @media (prefers-reduced-motion:reduce){.bo-row{animation:none}}
 @keyframes tick{to{transform:translateX(-50%)}}
