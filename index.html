@@ -431,6 +431,16 @@ html:not([data-theme=dark]) .pl-cd{border-color:transparent;border-left-color:va
 .pl-flow{display:flex;align-items:center;flex-wrap:wrap;row-gap:8px}.pl-flow span{font:600 12px var(--display);padding:7px 11px;border-radius:10px;background:var(--card);border:1px solid var(--line);white-space:nowrap}
 .pl-flow em{position:relative;width:24px;height:2px;background:#0ea5a455;overflow:hidden}.pl-flow em::after{content:"";position:absolute;left:-8px;top:-2px;width:8px;height:6px;border-radius:3px;background:#0ea5a4;animation:plfl 1.6s linear infinite}@keyframes plfl{to{left:100%}}
 @media (max-width:700px){.pl-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pl-col{min-height:200px;padding:10px;gap:8px}.pl-col h5{font-size:10px;letter-spacing:.08em}.pl-cd{padding:9px 10px}.pl-cd b{font-size:13px}.pl-cd small{font-size:11px}.pl-flow{gap:6px}.pl-flow em{display:none}}
+
+/* education staircase */
+.es{display:flex;align-items:flex-end;justify-content:center;padding-top:70px;max-width:760px;margin:0 auto}
+.es-st{position:relative;flex:1;padding:24px;color:#fff;background:linear-gradient(160deg,var(--c),color-mix(in srgb,var(--c) 55%,#06201f));transition:transform .4s;box-shadow:0 24px 40px -26px #0008}
+.es-st:first-child{border-radius:20px 0 0 20px;height:200px}.es-st:last-child{border-radius:0 20px 20px 0;height:280px}.es-st:hover{transform:translateY(-6px)}
+.es-yr{font:800 14px var(--display);opacity:.85}.es-st h3{margin:4px 0 2px;font:800 44px/1 var(--display);color:#fff}.es-fn{font:500 14px var(--display);opacity:.92}
+.es-mj{display:inline-block;margin-top:12px;font:600 12px var(--display);padding:4px 10px;border-radius:999px;background:#ffffff2e}.es-co{font-size:13px;opacity:.85;margin-top:10px}
+.es-hat{position:absolute;top:-64px;right:28px;width:58px;height:58px;fill:none;stroke:#0ea5a4;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;animation:esbob 2.4s ease-in-out infinite}@keyframes esbob{50%{transform:translateY(-8px) rotate(-6deg)}}
+@media (prefers-reduced-motion:reduce){.es-hat{animation:none}}
+@media (max-width:600px){.es{padding-top:58px}.es-st{padding:16px 14px}.es-st h3{font-size:32px}.es-fn{font-size:12px}.es-mj{font-size:10.5px;padding:3px 8px}.es-co{font-size:11.5px}.es-st:first-child{height:220px}.es-st:last-child{height:290px}.es-hat{width:46px;height:46px;top:-52px;right:14px}}
 </style>
 </head>
 <body>
@@ -585,9 +595,9 @@ html:not([data-theme=dark]) .pl-cd{border-color:transparent;border-left-color:va
     <section class="sec" id="education">
       <div class="eyebrow">Education</div>
       <h2>Academic background</h2>
-      <div class="edu">
-        <div class="ed rv"><span class="yr">2021</span><div><h3>MBA in Management</h3><p>Govt. City College, Chattogram</p></div></div>
-        <div class="ed rv"><span class="yr">2019</span><div><h3>BBA in Management</h3><p>Govt. City College, Chattogram</p></div></div>
+      <div class="es rv">
+        <div class="es-st" style="--c:#f59e0b"><div class="es-yr">2019</div><h3>BBA</h3><div class="es-fn">Bachelor of Business Administration</div><span class="es-mj">Major: Management</span><div class="es-co">Govt. City College, Chattogram</div></div>
+        <div class="es-st" style="--c:#0ea5a4"><svg class="es-hat" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/><path d="M22 9v6"/></svg><div class="es-yr">2021</div><h3>MBA</h3><div class="es-fn">Master of Business Administration</div><span class="es-mj">Major: Management</span><div class="es-co">Govt. City College, Chattogram</div></div>
       </div>
     </section>
 
