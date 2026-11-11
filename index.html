@@ -23,7 +23,7 @@
 <script>(function(){try{var t=localStorage.getItem("theme")}catch(e){}if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)})()</script>
 <meta name="description" content="Tanmoy Chowdhury, Business Automation Expert and Finance Compliance Officer from Chattogram, Bangladesh.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Dancing+Script:wght@700&display=swap">
 <style>
 /* Layout: Aurora. Light page with slow-moving colour glows; glass nav; hero with photo ring; stats; services grid; tool marquee; timeline; contact band. Single committed light look. */
 :root{
@@ -477,6 +477,17 @@ html:not([data-theme=dark]) .cf-in{background:var(--card);border-color:transpare
 .kx5-f{margin-top:26px;border-radius:24px;background:var(--card);border:1px solid var(--line)}html:not([data-theme=dark]) .kx5-f{border-color:transparent;box-shadow:9px 9px 20px #c1cecb,-9px -9px 20px #fff}
 .kx5-r{text-align:center}.kx5-r .ev-sl{display:grid;grid-template-columns:1fr 1fr;max-width:340px;margin:8px auto 0}.kx5-r .ev-sl a{justify-content:center}.kx5-r .ev-sl a.ev-av{grid-column:1/-1}
 @media (max-width:860px){.kx5{grid-template-columns:1fr;gap:36px}.kx5-r .ev-sl{max-width:none}}
+
+footer.fc{display:block;text-align:center;padding-block:56px 44px}
+.fc-sg{display:inline-block;font:700 clamp(32px,8vw,54px)/1.3 "Dancing Script",cursive;color:var(--teal,#0ea5a4);padding:0 8px;white-space:nowrap;clip-path:inset(-10% 100% -10% 0);transition:clip-path 2.6s cubic-bezier(.5,.1,.3,1)}
+.fc.on .fc-sg{clip-path:inset(-10% -10% -10% 0)}
+.fc-tg{margin:4px 0 20px;color:var(--soft);font-size:14.5px}
+.fc-pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px 8px 8px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+html:not([data-theme=dark]) .fc-pill{box-shadow:9px 9px 20px #c1cecb,-9px -9px 20px #fff}
+.fc-sky{width:34px;height:34px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-size:17px}
+.fc-pill b{font:800 17px var(--display);color:var(--ink);font-variant-numeric:tabular-nums}.fc-pill small{color:var(--soft);font-size:13.5px}
+.fc-cp{display:block;margin-top:20px;color:var(--soft);font-size:14px}
+@media (prefers-reduced-motion:reduce){.fc-sg{clip-path:none;transition:none}}
 </style>
 </head>
 <body>
@@ -668,7 +679,7 @@ html:not([data-theme=dark]) .cf-in{background:var(--card);border-color:transpare
       </div>
     </section>
 
-    <footer><span>© 2026 Tanmoy Chowdhury</span><span>Business Automation · Finance Compliance</span></footer>
+    <footer class="fc" id="fcFoot"><div class="fc-sg">Tanmoy Chowdhury</div><p class="fc-tg">Business Automation · Finance Compliance</p><div class="fc-pill"><span class="fc-sky" id="fcSky" aria-hidden="true">☀️</span><b id="fcClk">--:--</b><small>in Chattogram</small></div><span class="fc-cp">© 2026 Tanmoy Chowdhury</span></footer>
   </div>
 </div>
 
@@ -754,6 +765,11 @@ if(window.IntersectionObserver)new IntersectionObserver(function(e){vis=e[0].isI
 f.addEventListener("submit",function(e){e.preventDefault();if(f.botcheck.checked)return;b.disabled=true;b.textContent="Sending…";m.textContent="";m.className="cf-msg";
 fetch(f.action,{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)}).then(function(r){return r.json()}).then(function(d){if(d.success){f.reset();m.textContent="✓ Thanks! Your message is on its way.";m.className="cf-msg ok"}else throw 0})
 .catch(function(){m.innerHTML='Something went wrong. Please email <a href="mailto:chowdhurytanmoy76@gmail.com">chowdhurytanmoy76@gmail.com</a>';m.className="cf-msg err"}).then(function(){b.disabled=false;b.textContent="Send message →"})})})();
+
+(function(){var f=document.getElementById("fcFoot");if(!f)return;var c=document.getElementById("fcClk"),s=document.getElementById("fcSky");
+function tick(){var d=new Date(Date.now()+(new Date().getTimezoneOffset()+360)*6e4),h=d.getHours(),m=d.getMinutes();c.textContent=((h%12)||12)+":"+String(m).padStart(2,"0")+(h<12?" AM":" PM");s.textContent=h>=6&&h<18?"☀️":"🌙"}
+tick();setInterval(tick,15000);
+if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){f.classList.add("on");io.disconnect()}},{threshold:.3});io.observe(f)}else f.classList.add("on")})();
 </script>
 
 </body>
