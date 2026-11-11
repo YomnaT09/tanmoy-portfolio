@@ -415,6 +415,22 @@ html:not([data-theme=dark]) .odm{box-shadow:inset 4px 4px 9px #c1cecb,inset -4px
 .stats .odm-col{font-size:inherit;color:inherit;display:flex;flex-direction:column;transition:transform 2s cubic-bezier(.2,.9,.25,1)}.odm-col i{font-style:normal;display:block;height:52px}
 .odm-it>span:last-child{display:block;margin-top:10px;font-size:13px;color:var(--soft)}
 @media (max-width:600px){.stats .odm-dg{font-size:34px;line-height:44px;height:44px}.odm-col i{height:44px}.odm{padding:6px 10px}.stats{row-gap:24px}}
+/* live pipeline */
+.pl-sub{max-width:640px;color:var(--soft);margin:10px 0 28px}
+.pl-board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.pl-col{padding:14px;border-radius:18px;background:var(--card);border:1px solid var(--line);min-height:250px;display:flex;flex-direction:column;gap:10px}
+html:not([data-theme=dark]) .pl-col{border-color:transparent;box-shadow:inset 4px 4px 9px #c1cecb,inset -4px -4px 9px #fff}
+.pl-col h5{margin:0 0 4px;display:flex;justify-content:space-between;align-items:center;font:700 12px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}
+.pl-col h5 span{display:flex;align-items:center;gap:8px}.pl-col h5 span::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c)}
+.pl-col h5 b{min-width:24px;height:24px;border-radius:8px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);font-size:12px;letter-spacing:0}
+.pl-cd{padding:12px 14px;border-radius:12px;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--c);box-shadow:0 8px 18px -12px #0005}
+html:not([data-theme=dark]) .pl-cd{border-color:transparent;border-left-color:var(--c);box-shadow:6px 6px 14px #c1cecb,-6px -6px 14px #fff}
+.pl-cd b{display:block;font:700 14px var(--display)}.pl-cd small{color:var(--soft);font-size:12px}
+.pl-cd.new{animation:plpop .5s}@keyframes plpop{from{transform:scale(.85);opacity:0}}
+.pl-foot{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-top:20px}.pl-foot small{color:var(--soft);font-size:12px}
+.pl-flow{display:flex;align-items:center;flex-wrap:wrap;row-gap:8px}.pl-flow span{font:600 12px var(--display);padding:7px 11px;border-radius:10px;background:var(--card);border:1px solid var(--line);white-space:nowrap}
+.pl-flow em{position:relative;width:24px;height:2px;background:#0ea5a455;overflow:hidden}.pl-flow em::after{content:"";position:absolute;left:-8px;top:-2px;width:8px;height:6px;border-radius:3px;background:#0ea5a4;animation:plfl 1.6s linear infinite}@keyframes plfl{to{left:100%}}
+@media (max-width:700px){.pl-board{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.pl-col{min-height:200px;padding:10px;gap:8px}.pl-col h5{font-size:10px;letter-spacing:.08em}.pl-cd{padding:9px 10px}.pl-cd b{font-size:13px}.pl-cd small{font-size:11px}.pl-flow{gap:6px}.pl-flow em{display:none}}
 </style>
 </head>
 <body>
@@ -511,6 +527,19 @@ html:not([data-theme=dark]) .odm{box-shadow:inset 4px 4px 9px #c1cecb,inset -4px
   </div>
 
   <div class="wrap">
+    <section class="sec" id="work">
+      <div class="eyebrow">See it in action</div>
+      <h2>A pipeline that runs itself</h2>
+      <p class="pl-sub">A live demo of the kind of GoHighLevel pipeline I build. New leads get an instant SMS and email, book a call and move forward on their own. Nobody drags a card by hand.</p>
+      <div class="pl-board rv" id="plBoard" aria-hidden="true">
+        <div class="pl-col" style="--c:#0ea5a4"><h5><span>New lead</span><b>0</b></h5></div>
+        <div class="pl-col" style="--c:#f59e0b"><h5><span>Contacted</span><b>0</b></h5></div>
+        <div class="pl-col" style="--c:#8b5cf6"><h5><span>Booked</span><b>0</b></h5></div>
+        <div class="pl-col" style="--c:#22c55e"><h5><span>Won</span><b>0</b></h5></div>
+      </div>
+      <div class="pl-foot"><div class="pl-flow"><span>Web form</span><em></em><span>GoHighLevel</span><em></em><span>SMS + Email</span><em></em><span>Calendar</span></div><small>Demo · names are made up</small></div>
+    </section>
+
     <section class="sec" id="experience">
       <div class="eyebrow">Experience</div>
       <h2>Where I've worked</h2>
@@ -669,6 +698,14 @@ var done=0;function go(){done=1;roll(b,0)}
 if(window.IntersectionObserver){var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();go()}},{threshold:.4});io.observe(b)}else go();
 b.querySelectorAll(".odm-it").forEach(function(d){d.addEventListener("mouseenter",function(){if(!done||rm)return;roll(d,1);d.offsetWidth;roll(d,0)})});
 addEventListener("resize",function(){if(done){b.querySelectorAll(".odm-col").forEach(function(c){c.style.transition="none";c.style.transform="translateY("+(-c.parentNode.offsetHeight*(+c.dataset.d))+"px)"})}})})();
+(function(){var b=document.getElementById("plBoard");if(!b)return;var cols=b.querySelectorAll(".pl-col"),N=["Sarah K.","James R.","Priya M.","Tom B.","Lena W.","Omar H.","Chris D.","Maya L."],C=["#0ea5a4","#f59e0b","#8b5cf6","#22c55e"],S=["via web form","SMS + email sent","call booked","deal won 🎉"],cards=[],n=0,vis=0,rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function cnt(){cols.forEach(function(c){c.querySelector("h5 b").textContent=c.querySelectorAll(".pl-cd").length})}
+function mk(st){var d=document.createElement("div");d.className="pl-cd";d.st=st;d.innerHTML="<b>"+N[n++%N.length]+"</b><small></small>";set(d);cols[st].appendChild(d);cards.push(d);return d}
+function set(d){d.style.setProperty("--c",C[d.st]);d.querySelector("small").textContent=S[d.st]}
+mk(3);mk(2);mk(1);mk(0);mk(0);cnt();
+function tick(){if(!vis||document.hidden)return;cards.slice().reverse().forEach(function(d){if(d.st<3&&Math.random()<.5){d.st++;set(d);d.classList.remove("new");void d.offsetWidth;d.classList.add("new");cols[d.st].appendChild(d)}});
+var w=cols[3].querySelectorAll(".pl-cd");if(w.length>3){var o=w[0];o.remove();cards.splice(cards.indexOf(o),1)}if(cols[0].querySelectorAll(".pl-cd").length<2){var x=mk(0);x.classList.add("new")}cnt()}
+if(window.IntersectionObserver)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(b);else vis=1;if(!rm)setInterval(tick,1700)})();
 </script>
 
 </body>
