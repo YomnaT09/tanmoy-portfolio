@@ -406,7 +406,7 @@ html:not([data-theme=dark]) .xm::after{opacity:.5}
 .ev-sl a.ev-av{position:relative}.ev-dot{width:10px;height:10px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 0 #22c55e88;animation:evpd 1.8s infinite;flex:none}@keyframes evpd{70%{box-shadow:0 0 0 8px #22c55e00}}
 .ev-tip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,6px);white-space:nowrap;background:#0f172a;color:#fff;font:500 12px var(--display);padding:6px 10px;border-radius:8px;opacity:0;pointer-events:none;transition:.25s}.ev-av:hover .ev-tip,.ev-av:focus-visible .ev-tip{opacity:1;transform:translate(-50%,0)}
 @media (prefers-reduced-motion:reduce){.ev-dot{animation:none}}
-@media (max-width:600px){.ev-sl a.ev-av{flex:1 1 100%;justify-content:center}}
+@media (max-width:600px){.ev-sl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.ev-sl a{justify-content:center;padding-inline:8px;min-width:0}.ev-sl a.ev-av{grid-column:1/-1}}
 </style>
 </head>
 <body>
