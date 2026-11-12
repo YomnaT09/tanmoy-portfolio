@@ -509,6 +509,48 @@ html:not([data-theme=dark]) .nav ul{box-shadow:inset 3px 3px 7px #c1cecb,inset -
 @media (max-width:1180px) and (min-width:901px){.nav ul a{padding:6px 9px;font-size:14px}.nav .cv{padding-inline:12px}}
 @media (max-width:1000px) and (min-width:901px){.nav .logo{font-size:0;gap:0}}
 @media (prefers-reduced-motion:reduce){.nav-pl{transition:opacity .25s}}
+
+.cx{position:relative;padding:10px 0 0 150px;min-height:520px}
+.cx-dm{font-size:12px;color:var(--soft);margin:12px 0 0;text-align:right}
+.cx-ph{position:absolute;left:0;top:40px;width:270px;height:470px;border-radius:34px;padding:10px;background:#0b1214;box-shadow:0 30px 60px -20px #000c,0 0 0 2px #1f2a2d;z-index:2}
+.cx-ntc{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:80px;height:18px;border-radius:12px;background:#0b1214;z-index:3}
+.cx-ch{height:100%;border-radius:26px;overflow:hidden;display:flex;flex-direction:column;background:var(--card)}
+.cx-bar{display:flex;align-items:center;gap:9px;padding:30px 14px 11px;border-bottom:1px solid var(--line)}
+html:not([data-theme=dark]) .cx-bar{border-color:#c9d6d3}
+.cx-bar img{width:32px;height:32px;border-radius:50%;object-fit:cover}.cx-bar b{display:block;font:600 14px var(--display);line-height:1.2}.cx-bar small{color:#16a34a;font-size:11px;font-weight:600}
+.cx-ms{flex:1;padding:14px;display:flex;flex-direction:column;gap:8px;overflow:hidden;justify-content:flex-end;min-height:0}
+.cx-m{max-width:86%;padding:8px 12px;border-radius:14px;font-size:13px;line-height:1.45;animation:cxpop .4s ease both}
+.cx-m.c{background:var(--chip);align-self:flex-start;border-bottom-left-radius:4px}
+html:not([data-theme=dark]) .cx-m.c{background:var(--bg);box-shadow:inset 3px 3px 6px #c1cecb,inset -3px -3px 6px #fff}
+.cx-m.t{background:linear-gradient(135deg,#0ea5a4,#0891b2);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.cx-m small{display:block;font-size:10px;opacity:.7;margin-top:2px}
+.cx-ty{align-self:flex-start;display:flex;gap:4px;padding:10px 12px;border-radius:14px;background:var(--chip);animation:cxpop .3s both}.cx-ty.r{align-self:flex-end;background:#0ea5a433}
+.cx-ty i{width:6px;height:6px;border-radius:50%;background:var(--soft);animation:cxb 1s infinite}.cx-ty i:nth-child(2){animation-delay:.15s}.cx-ty i:nth-child(3){animation-delay:.3s}
+@keyframes cxb{30%{transform:translateY(-4px);opacity:.5}}
+@keyframes cxpop{from{opacity:0;transform:translateY(8px) scale(.96)}}
+.cx-lap{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg);box-shadow:0 30px 60px -30px #0008}
+html:not([data-theme=dark]) .cx-lap{border-color:#c9d6d3}
+.cx-chr{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--chip);border-bottom:1px solid var(--line);font:500 12px var(--display);color:var(--soft)}.cx-chr i{width:9px;height:9px;border-radius:50%;background:var(--c)}.cx-chr span{margin-left:10px}
+html:not([data-theme=dark]) .cx-chr{background:#eef3f2;border-color:#c9d6d3}
+.cx-in{padding:16px 16px 16px 150px}
+.cx-bh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}.cx-bh b{font:700 14px var(--display)}
+.cx-st{display:inline-flex;align-items:center;gap:8px;font:600 12.5px var(--display);padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--soft);transition:.3s}
+.cx-st i{width:8px;height:8px;border-radius:50%;background:#f59e0b;flex:none}.cx-st.run i{animation:cxb .8s infinite}.cx-st.ok{color:var(--ink);border-color:#22c55e}.cx-st.ok i{background:#22c55e}
+html:not([data-theme=dark]) .cx-st{border-color:transparent;box-shadow:5px 5px 12px #c1cecb,-5px -5px 12px #fff}
+.cx-bd{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cx-col{padding:10px;border-radius:16px;background:var(--card);border:1px solid var(--line);min-height:330px;display:flex;flex-direction:column;gap:8px;transition:box-shadow .4s}
+html:not([data-theme=dark]) .cx-col{border-color:transparent;box-shadow:inset 4px 4px 9px #c1cecb,inset -4px -4px 9px #fff}
+.cx-col.gl{box-shadow:0 0 0 2px var(--c)!important}
+.cx-col h5{margin:0 0 2px;display:flex;justify-content:space-between;align-items:center;font:700 10.5px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+.cx-col h5 span{display:flex;align-items:center;gap:6px}.cx-col h5 span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+.cx-col h5 b{min-width:22px;height:22px;border-radius:7px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);font-size:11px;letter-spacing:0}
+.cx-cd{padding:8px 10px;border-radius:11px;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--c);box-shadow:0 8px 18px -12px #0005}
+html:not([data-theme=dark]) .cx-cd{border-color:transparent;border-left-color:var(--c);box-shadow:5px 5px 12px #c1cecb,-5px -5px 12px #fff}
+.cx-cd b{display:block;font:700 13px var(--display)}.cx-cd small{display:block;color:var(--soft);font-size:11.5px;transition:color .3s}
+.cx-cd.pop{animation:cxcd .45s cubic-bezier(.3,1.5,.5,1) both}@keyframes cxcd{from{opacity:0;transform:translateY(-10px) scale(.9)}}
+.cx-cd.hl small{color:var(--c)}
+@media (max-width:900px){.cx{padding:0;min-height:0}.cx-ph{position:relative;top:0;width:100%;max-width:300px;height:380px;margin:0 auto 16px}.cx-in{padding:12px}
+.cx-bd{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.cx-col{min-height:150px;padding:8px}.cx-dm{text-align:left}}
 </style>
 </head>
 <body>
@@ -609,14 +651,12 @@ html:not([data-theme=dark]) .nav ul{box-shadow:inset 3px 3px 7px #c1cecb,inset -
     <section class="sec" id="work">
       <div class="eyebrow">See it in action</div>
       <h2>A pipeline that runs itself</h2>
-      <p class="pl-sub">A live demo of the kind of GoHighLevel pipeline I build. New leads get an instant SMS and email, book a call and move forward on their own. Nobody drags a card by hand.</p>
-      <div class="pl-board rv" id="plBoard" aria-hidden="true">
-        <div class="pl-col" style="--c:#0ea5a4"><h5><span>New lead</span><b>0</b></h5></div>
-        <div class="pl-col" style="--c:#f59e0b"><h5><span>Contacted</span><b>0</b></h5></div>
-        <div class="pl-col" style="--c:#8b5cf6"><h5><span>Booked</span><b>0</b></h5></div>
-        <div class="pl-col" style="--c:#22c55e"><h5><span>Won</span><b>0</b></h5></div>
+      <p class="pl-sub">A client tells me what slows them down, and I turn it into a GoHighLevel pipeline that runs on its own. Watch the chat on the phone change the board on the laptop.</p>
+      <div class="cx rv" id="cxDemo" aria-label="Demo: a client chat that builds a GoHighLevel pipeline">
+        <div class="cx-ph" aria-hidden="true"><span class="cx-ntc"></span><div class="cx-ch"><div class="cx-bar"><img src="photo.jpg" alt="" width="32" height="32" loading="lazy"><div><b>Tanmoy Chowdhury</b><small>● Online · replies fast</small></div></div><div class="cx-ms"></div></div></div>
+        <div class="cx-lap" aria-hidden="true"><div class="cx-chr"><i style="--c:#f87171"></i><i style="--c:#fbbf24"></i><i style="--c:#34d399"></i><span>GoHighLevel · Opportunities</span></div><div class="cx-in"><div class="cx-bh"><b>GoHighLevel pipeline</b><span class="cx-st"><i></i>Waiting for the client…</span></div><div class="cx-bd"><div class="cx-col" style="--c:#0ea5a4"><h5><span>New lead</span><b>0</b></h5></div><div class="cx-col" style="--c:#f59e0b"><h5><span>Contacted</span><b>0</b></h5></div><div class="cx-col" style="--c:#8b5cf6"><h5><span>Booked</span><b>0</b></h5></div><div class="cx-col" style="--c:#22c55e"><h5><span>Won</span><b>0</b></h5></div></div></div></div>
       </div>
-      <div class="pl-foot"><div class="pl-flow"><span>Web form</span><em></em><span>GoHighLevel</span><em></em><span>SMS + Email</span><em></em><span>Calendar</span></div><small>Demo · names are made up</small></div>
+      <p class="cx-dm">Demo · names and chat are made up</p>
     </section>
 
     <section class="sec" id="experience">
@@ -804,6 +844,47 @@ pl.style.left=a.offsetLeft+"px";pl.style.width=a.offsetWidth+"px";pl.style.opaci
 window.__navPill=function(i){if(i===cur&&pl.style.opacity==="1")return;cur=i;place()};
 addEventListener("resize",place);if(document.fonts)document.fonts.ready.then(place);
 var on=ul.querySelector("a.on");if(on){cur=as.indexOf(on);place()}})();
+
+(function(){var COLS=["#0ea5a4","#f59e0b","#8b5cf6","#22c55e"],ORDER=["Sarah K.","James R.","Priya M.","Omar H.","Lena W."];
+var ST=[
+ {c:"Our leads sit in 3 different spreadsheets. 😵",t:"I'll bring them all into one GoHighLevel pipeline.",tm:["09:14","09:15"],run:"Importing contacts…",ok:"4 contacts imported",
+  s:{"Sarah K.":[0,"imported"],"James R.":[0,"imported"],"Priya M.":[0,"imported"],"Omar H.":[0,"imported"]}},
+ {c:"New leads wait days before anyone replies.",t:"Every new lead will get an SMS and email in seconds.",tm:["09:20","09:21"],run:"Turning on auto SMS + email…",ok:"Auto-reply is live",
+  s:{"Sarah K.":[1,"SMS + email sent"],"James R.":[1,"SMS + email sent"],"Priya M.":[1,"SMS + email sent"],"Omar H.":[1,"SMS + email sent"],"Lena W.":[1,"SMS + email sent",0]}},
+ {c:"Booking calls takes so much back and forth.",t:"They'll get your calendar link and book on their own.",tm:["09:31","09:32"],run:"Adding booking link…",ok:"3 calls booked",
+  s:{"Sarah K.":[2,"call booked 📅"],"James R.":[1,"SMS + email sent"],"Priya M.":[2,"call booked 📅"],"Omar H.":[2,"call booked 📅"],"Lena W.":[1,"SMS + email sent"]}},
+ {c:"Can I see who actually closed?",t:"Won deals move here and you get a ping. 🎉",tm:["09:40","09:41"],run:"Tracking won deals…",ok:"2 deals won",
+  s:{"Sarah K.":[3,"deal won 🎉"],"James R.":[1,"SMS + email sent"],"Priya M.":[2,"call booked 📅"],"Omar H.":[3,"deal won 🎉"],"Lena W.":[1,"SMS + email sent"]}}];
+function Demo(root){
+  var cols=[].slice.call(root.querySelectorAll(".cx-col")),ms=root.querySelector(".cx-ms"),strip=root.querySelector(".strip"),stt=root.querySelector(".cx-st"),steps=[].slice.call(root.querySelectorAll(".steps button")),run=0,cards={};
+  function sleep(ms,id){return new Promise(function(res,rej){setTimeout(function(){id===run?res():rej("x")},ms)})}
+  function cnt(){cols.forEach(function(c){c.querySelector("h5 b").textContent=c.querySelectorAll(".cx-cd").length})}
+  function mk(n,col,sub){var d=document.createElement("div");d.className="cx-cd";d.innerHTML="<b>"+n+"</b><small>"+sub+"</small>";d.style.setProperty("--c",COLS[col]);cards[n]=d;cols[col].appendChild(d);return d}
+  function sort(col){ORDER.forEach(function(n){if(cards[n]&&cards[n].parentNode===cols[col])cols[col].appendChild(cards[n])})}
+  function render(k){Object.keys(cards).forEach(function(n){cards[n].remove()});cards={};if(k>=0){var s=ST[k].s;ORDER.forEach(function(n){if(s[n])mk(n,s[n][0],s[n][1])})}cnt()}
+  function move(d,col,sub){var a=d.getBoundingClientRect();cols[col].appendChild(d);sort(col);var b=d.getBoundingClientRect();d.style.transition="none";d.style.transform="translate("+(a.left-b.left)+"px,"+(a.top-b.top)+"px)";d.offsetWidth;d.style.transition="transform .65s cubic-bezier(.3,.7,.2,1)";d.style.transform="";d.style.setProperty("--c",COLS[col]);d.querySelector("small").textContent=sub;d.classList.add("hl");setTimeout(function(){d.classList.remove("hl")},1400);cnt()}
+  function glow(col){cols[col].classList.add("gl");setTimeout(function(){cols[col].classList.remove("gl")},1100)}
+  function status(t,ok){if(!stt)return;stt.className="cx-st"+(ok?" ok":t?" run":"");stt.innerHTML="<i></i>"+(t||"Waiting for the client…")}
+  function bubble(cls,html,host){var d=document.createElement("div");d.className=cls;d.innerHTML=html;host.appendChild(d);if(ms)while(ms.scrollHeight>ms.clientHeight+2&&ms.children.length>1)ms.removeChild(ms.firstChild);return d}
+  async function apply(k,id){var s=ST[k].s,i,n,list=ORDER.filter(function(n){return s[n]});
+    for(i=0;i<list.length;i++){n=list[i];var v=s[n];if(!cards[n]){var sp=v.length>2?v[2]:v[0];var d=mk(n,sp,sp===v[0]?v[1]:"via web form");sort(sp);d.classList.add("pop");glow(sp);cnt();await sleep(320,id);if(sp!==v[0]){await sleep(700,id);move(d,v[0],v[1]);glow(v[0]);await sleep(300,id)}}
+      else if(cards[n].parentNode!==cols[v[0]]){move(cards[n],v[0],v[1]);glow(v[0]);await sleep(330,id)}
+      else if(cards[n].querySelector("small").textContent!==v[1]){cards[n].querySelector("small").textContent=v[1]}}}
+  async function step(k,id){var S=ST[k];steps.forEach(function(b,i){b.classList.toggle("on",i===k);b.classList.toggle("dn",i<k)});status("");
+    if(strip){strip.querySelector(".sl").innerHTML='<span class="who">Client</span>';strip.querySelector(".sr").innerHTML='<span class="who">Tanmoy <img src="photo.jpg" alt=""></span>'}
+    var hostC=ms||strip.querySelector(".sl"),hostT=ms||strip.querySelector(".sr");
+    var ty=bubble("cx-ty",'<i></i><i></i><i></i>',hostC);await sleep(900,id);ty.remove();bubble("cx-m c",S.c+"<small>Client · "+S.tm[0]+"</small>",hostC);await sleep(900,id);
+    ty=bubble("cx-ty r",'<i></i><i></i><i></i>',hostT);await sleep(1100,id);ty.remove();bubble("cx-m t",S.t+"<small>Tanmoy · "+S.tm[1]+"</small>",hostT);await sleep(500,id);
+    status(S.run);await sleep(700,id);await apply(k,id);status("✓ "+S.ok,true);await sleep(2300,id)}
+  async function loop(from){var id=++run;try{render(from-1);if(ms)ms.innerHTML="";for(var k=from;k<ST.length;k++)await step(k,id);steps.forEach(function(b){b.classList.remove("on");b.classList.add("dn")});await sleep(3000,id);loop(0)}catch(e){}}
+  steps.forEach(function(b,i){b.addEventListener("click",function(){loop(i)})});
+  status("");render(-1);
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){render(3);status("✓ "+ST[3].ok,true);ST.forEach(function(S){bubble("cx-m c",S.c+"<small>Client · "+S.tm[0]+"</small>",ms);bubble("cx-m t",S.t+"<small>Tanmoy · "+S.tm[1]+"</small>",ms)});return}
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){io.disconnect();loop(0)}},{threshold:.3});io.observe(root);
+  root.__jump=function(k){run++;render(k);status("✓ "+ST[k].ok,true)};
+}
+var cxr=document.getElementById("cxDemo");if(cxr&&window.IntersectionObserver)Demo(cxr);
+})();
 </script>
 
 </body>
