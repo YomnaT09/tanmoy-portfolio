@@ -551,6 +551,30 @@ html:not([data-theme=dark]) .cx-cd{border-color:transparent;border-left-color:va
 .cx-cd.hl small{color:var(--c)}
 @media (max-width:900px){.cx{padding:0;min-height:0}.cx-ph{position:relative;top:0;width:100%;max-width:300px;height:380px;margin:0 auto 16px}.cx-in{padding:12px}
 .cx-bd{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.cx-col{min-height:150px;padding:8px}.cx-dm{text-align:left}}
+
+.tmx{background:var(--card);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 50px -30px #0f172a55;overflow:hidden;width:100%;max-width:470px;justify-self:end;min-width:0}
+html:not([data-theme=dark]) .tmx{border-color:transparent;box-shadow:9px 9px 20px #c1cecb,-9px -9px 20px #fff}
+html[data-theme=dark] .tmx{box-shadow:0 24px 50px -30px #000c}
+.tmx-cap{display:flex;justify-content:space-between;align-items:center;padding:13px 16px;border-bottom:1px solid var(--line);font:700 13.5px var(--display)}
+html:not([data-theme=dark]) .tmx-cap{border-color:#c9d6d3}
+.tmx-lv{display:inline-flex;align-items:center;gap:6px;color:#16a34a;font:600 12px var(--display)}.tmx-lv::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;animation:tmxp 1.6s infinite}@keyframes tmxp{50%{opacity:.3}}
+.tmx-cv{position:relative;height:340px;overflow:hidden}
+.tmx-belt{position:absolute;left:0;right:0;height:6px;border-radius:3px;background:repeating-linear-gradient(90deg,var(--line) 0 14px,transparent 14px 24px);animation:tmxb .8s linear infinite}
+html:not([data-theme=dark]) .tmx-belt{background:repeating-linear-gradient(90deg,#c1cecb 0 14px,transparent 14px 24px)}
+@keyframes tmxb{to{background-position:24px 0}}
+.tmx-mc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:150px;border-radius:20px;background:linear-gradient(160deg,#0ea5a4,#0b7c7b);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;z-index:3;box-shadow:0 20px 40px -16px #0ea5a4}
+.tmx-gr{font-size:34px;line-height:1;display:flex;gap:2px}.tmx-gr span{display:inline-block;animation:tmxs 3s linear infinite}.tmx-gr span+span{animation-direction:reverse;font-size:24px;margin-top:14px}
+@keyframes tmxs{to{transform:rotate(360deg)}}
+.tmx-mc b{font:700 12px var(--display);letter-spacing:.06em;text-transform:uppercase}
+.tmx-lb{position:absolute;top:14px;font:700 11px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}.tmx-lb.tmx-l{left:16px}.tmx-lb.tmx-r{right:16px;color:#16a34a}
+.tmx-tk{position:absolute;padding:7px 11px;border-radius:10px;font:600 12px var(--display);white-space:nowrap;z-index:2}
+.tmx-tk.in{left:0;background:var(--bg);border:1px dashed #f43f5e;color:var(--ink);animation:tmxi 6s linear infinite}
+.tmx-tk.out{left:50%;background:#22c55e1f;border:1px solid #22c55e;color:var(--ink);animation:tmxo 6s linear infinite}
+@keyframes tmxi{0%{transform:translateX(-110%);opacity:0}8%{opacity:1}48%{transform:translateX(calc(var(--w,470px) * .5 - 100%));opacity:1}50%,100%{opacity:0;transform:translateX(calc(var(--w,470px) * .5 - 100%))}}
+@keyframes tmxo{0%,50%{opacity:0;transform:translateX(0)}52%,92%{opacity:1}100%{transform:translateX(calc(var(--w,470px) * .5));opacity:0}}
+@media (max-width:900px){.tmx{justify-self:stretch;max-width:none}}
+@media (max-width:600px){.tmx-mc{width:96px;height:130px}.tmx-tk{font-size:11px;padding:6px 9px}}
+@media (prefers-reduced-motion:reduce){.tmx-belt,.tmx-gr span{animation:none}.tmx-tk.in{animation:none;opacity:0}.tmx-tk.out{animation:none;opacity:1;transform:translateX(70px)}}
 </style>
 </head>
 <body>
@@ -590,15 +614,9 @@ html:not([data-theme=dark]) .cx-cd{border-color:transparent;border-left-color:va
         <p class="lead in s3">I'm Tanmoy Chowdhury, a Business Automation Expert. I set up CRM systems, workflows and calling tools for teams in the US, Canada and 7+ other countries, so they stop doing the same tasks by hand.</p>
         <div class="btns in s4"><a class="btn main" href="#services">See what I do</a><a class="btn alt" href="#contact">Contact me</a></div>
       </div>
-      <div class="chat in s3" aria-label="Example conversation with a client">
-        <div class="chat-bar"><img src="photo.jpg" alt="" width="38" height="38"><div><b>Tanmoy Chowdhury</b><small>● Online · replies fast</small></div></div>
-        <div class="msgs">
-          <div class="msg c">Our contacts are spread across 3 spreadsheets. 😵<small>Client · 09:14</small></div>
-          <div class="msg t">I'll move everything into GoHighLevel with tags, pipelines and clean data.<small>Tanmoy · 09:16</small></div>
-          <div class="msg c">Will we lose anything?<small>Client · 09:17</small></div>
-          <div class="msg t">Nothing. Every contact is checked before go-live. ✅<small>Tanmoy · 09:17</small></div>
-          <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
+      <div class="tmx in s3" role="img" aria-label="Tasks done by hand go into an automation machine and come out done automatically">
+        <div class="tmx-cap">Manual in, automatic out <span class="tmx-lv">Live</span></div>
+        <div class="tmx-cv" id="tmxCv" aria-hidden="true"><span class="tmx-lb tmx-l">By hand</span><span class="tmx-lb tmx-r">Automated</span><span class="tmx-belt" style="top:94px"></span><span class="tmx-belt" style="top:156px"></span><span class="tmx-belt" style="top:218px"></span><span class="tmx-belt" style="top:280px"></span><span class="tmx-tk in" style="top:60px;animation-delay:0.0s">✋ Copy contact to sheet</span><span class="tmx-tk in" style="top:122px;animation-delay:-1.5s">✋ Send follow-up</span><span class="tmx-tk in" style="top:184px;animation-delay:-3.0s">✋ Tag new lead</span><span class="tmx-tk in" style="top:246px;animation-delay:-4.5s">✋ Book the call</span><span class="tmx-tk out" style="top:60px;animation-delay:0.0s">✓ Copy contact to sheet</span><span class="tmx-tk out" style="top:122px;animation-delay:-1.5s">✓ Send follow-up</span><span class="tmx-tk out" style="top:184px;animation-delay:-3.0s">✓ Tag new lead</span><span class="tmx-tk out" style="top:246px;animation-delay:-4.5s">✓ Book the call</span><div class="tmx-mc"><div class="tmx-gr"><span>⚙</span><span>⚙</span></div><b>Automation</b></div></div>
       </div>
     </section>
 
@@ -885,6 +903,8 @@ function Demo(root){
 }
 var cxr=document.getElementById("cxDemo");if(cxr&&window.IntersectionObserver)Demo(cxr);
 })();
+
+(function(){var c=document.getElementById("tmxCv");if(!c)return;function s(){c.style.setProperty("--w",c.clientWidth+"px")}s();addEventListener("resize",s)})();
 </script>
 
 </body>
