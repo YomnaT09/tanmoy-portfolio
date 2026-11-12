@@ -499,6 +499,16 @@ html:not([data-theme=dark]) .fc-pill{box-shadow:9px 9px 20px #c1cecb,-9px -9px 2
 html:not([data-theme=dark]) .fm-f,html:not([data-theme=dark]) .fm-b{border-radius:22px;box-shadow:9px 9px 20px #c1cecb,-9px -9px 20px #fff}
 @media (max-width:860px){.fm{max-width:none}}
 @media (prefers-reduced-motion:reduce){.fm-in{transition:none}}
+
+.nav ul{position:relative;gap:2px;padding:4px;border-radius:12px;background:var(--bg);box-shadow:inset 0 0 0 1px var(--line)}
+html:not([data-theme=dark]) .nav ul{box-shadow:inset 3px 3px 7px #c1cecb,inset -3px -3px 7px #fff}
+.nav ul a{padding:6px 12px;border-radius:9px;z-index:1}
+.nav ul a::before{display:none}
+.nav ul a.on,.nav ul a.on:hover{color:#fff}
+.nav-pl{position:absolute;top:4px;bottom:4px;left:0;width:0;border-radius:9px;background:var(--teal);box-shadow:0 6px 14px -6px #0ea5a4;opacity:0;pointer-events:none;transition:left .4s cubic-bezier(.3,.7,.3,1),width .4s cubic-bezier(.3,.7,.3,1),opacity .25s}
+@media (max-width:1180px) and (min-width:901px){.nav ul a{padding:6px 9px;font-size:14px}.nav .cv{padding-inline:12px}}
+@media (max-width:1000px) and (min-width:901px){.nav .logo{font-size:0;gap:0}}
+@media (prefers-reduced-motion:reduce){.nav-pl{transition:opacity .25s}}
 </style>
 </head>
 <body>
@@ -512,6 +522,7 @@ html:not([data-theme=dark]) .fm-f,html:not([data-theme=dark]) .fm-b{border-radiu
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#certifications">Certifications</a></li>
@@ -525,7 +536,7 @@ html:not([data-theme=dark]) .fm-f,html:not([data-theme=dark]) .fm-b{border-radiu
       <span class="prog" id="prog"></span>
     </header>
     <nav class="drawer" id="drawer" aria-label="Mobile menu">
-      <a href="#about">About</a><a href="#services">Services</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#certifications">Certifications</a><a href="cv.pdf" target="_blank" rel="noopener">Download CV</a><a class="d-hire" href="#contact">Hire me</a>
+      <a href="#about">About</a><a href="#services">Services</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#certifications">Certifications</a><a href="cv.pdf" target="_blank" rel="noopener">Download CV</a><a class="d-hire" href="#contact">Hire me</a>
     </nav>
   </div>
 
@@ -721,6 +732,7 @@ html:not([data-theme=dark]) .fm-f,html:not([data-theme=dark]) .fm-b{border-radiu
     var max=document.documentElement.scrollHeight-innerHeight;prog.style.transform="scaleX("+(max>0?Math.min(scrollY/max,1):0)+")";
     var cur=-1;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<innerHeight*.35)cur=i;});
     links.forEach(function(a,i){a.classList.toggle("on",i===cur);});
+    if(window.__navPill)window.__navPill(cur);
   }
   addEventListener("scroll",onScroll,{passive:true});addEventListener("resize",onScroll);onScroll();
   var burger=document.getElementById("burger"),drawer=document.getElementById("drawer");
@@ -783,6 +795,15 @@ tick();setInterval(tick,15000);
 if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){f.classList.add("on");io.disconnect()}},{threshold:.3});io.observe(f)}else f.classList.add("on")})();
 
 (function(){var a=document.getElementById("fmBtn");if(!a)return;a.addEventListener("touchstart",function(e){if(!a.classList.contains("fl")){a.classList.add("fl");e.preventDefault()}},{passive:false})})();
+
+(function(){var ul=document.querySelector(".nav ul");if(!ul)return;var pl=document.createElement("span");pl.className="nav-pl";pl.setAttribute("aria-hidden","true");ul.appendChild(pl);
+var as=[].slice.call(ul.querySelectorAll("a")),cur=-1;
+function place(){var a=as[cur];if(!a||!a.offsetWidth){pl.style.opacity=0;return}
+if(pl.style.opacity!=="1"){pl.style.transition="none";pl.style.left=a.offsetLeft+"px";pl.style.width=a.offsetWidth+"px";pl.offsetWidth;pl.style.transition=""}
+pl.style.left=a.offsetLeft+"px";pl.style.width=a.offsetWidth+"px";pl.style.opacity=1}
+window.__navPill=function(i){if(i===cur&&pl.style.opacity==="1")return;cur=i;place()};
+addEventListener("resize",place);if(document.fonts)document.fonts.ready.then(place);
+var on=ul.querySelector("a.on");if(on){cur=as.indexOf(on);place()}})();
 </script>
 
 </body>
