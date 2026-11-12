@@ -904,6 +904,16 @@ function drop(){if(!v||document.hidden)return;var t=T[i++%T.length],W=st.clientW
  if(!a.animate){a.remove();done(t);return}
  a.animate([{transform:"translate("+x+"px,8px)",opacity:0},{transform:"translate("+x+"px,40px)",opacity:1,offset:.25},{transform:"translate("+(W/2-aw/2)+"px,130px) scale(.6)",opacity:0}],{duration:1500,easing:"cubic-bezier(.5,0,.7,1)",fill:"forwards"}).onfinish=function(){a.remove();done(t)}}
 done(T[4]);done(T[3]);setTimeout(drop,300);setInterval(drop,1700)})();
+
+/* Rolodex scroll 3D */
+(function(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+var els=[].slice.call(document.querySelectorAll(".xm,.list .r,.stats,.tmx,.cx-lap,.cx-ph,.kx5-f,.ev-sl a,.stage,.es,.cs-stk,.ab-pic,.ab-txt")),raf=0;
+els.forEach(function(e){e.style.transition="border-color .35s,box-shadow .35s"});
+function upd(){raf=0;var vh=innerHeight,max=document.documentElement.scrollHeight-vh,f=Math.max(0,Math.min(1,scrollY/(vh*.4),(max-scrollY)/(vh*.4)));els.forEach(function(e){var r=e.getBoundingClientRect();if(r.bottom<-200||r.top>vh+200)return;
+ var c=(r.top+r.height/2-vh/2)/(vh/2);c=Math.max(-1.4,Math.min(1.4,c));var dz=f*Math.sign(c)*Math.max(0,Math.abs(c)-.3)/1.1;
+ if(Math.abs(dz)<.005){if(e.style.transform)e.style.transform="";return}
+ e.style.transformOrigin=c>0?"50% 0":"50% 100%";e.style.transform="perspective(900px) rotateX("+(-dz*70).toFixed(2)+"deg)"})}
+addEventListener("scroll",function(){if(!raf)raf=requestAnimationFrame(upd)},{passive:true});addEventListener("resize",upd);upd()})();
 </script>
 
 </body>
