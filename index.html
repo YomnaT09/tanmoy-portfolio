@@ -41,7 +41,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 h1,h2,h3{text-wrap:balance}
-.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .page{position:relative;overflow:hidden;overflow:clip}
 
 /* motion */
@@ -553,19 +553,19 @@ html:not([data-theme=dark]) .rg-it.on{-webkit-text-stroke:0;color:transparent;ba
 html:not([data-theme=dark]){--bg:#ffffff;--white:#fff;--card:#ffffff;--chip:#ffffff;--ink:#121212;--soft:#4b4b55;--line:#00000014}
 html:not([data-theme=dark]) .blobs{display:none}
 html:not([data-theme=dark]) :is(.nav,.stats,.facts,.r,.xm,.ed,.ev-sl a,.badge,.burger,.tgl,.pill,.btn.alt,.cv,.cf,.kx5-f,.fc-pill,.tmx,.cx-lap,.cx-st,.tfd-dn,.cx-cd,.cs-nav button){border:0!important;box-shadow:0 2px 0 #00000010,0 18px 30px -22px #0000004d!important}
-html:not([data-theme=dark]) .sec{border-radius:36px;padding:64px 48px 64px;margin-top:20px}
+html:not([data-theme=dark]) .sec{padding:64px 0;margin-top:0;box-shadow:0 0 0 100vmax var(--bk,transparent);clip-path:inset(0 -100vmax)}
 html:not([data-theme=dark]) .sec .eyebrow{display:inline-block;background:#121212;color:#fff;padding:5px 12px;border-radius:999px;letter-spacing:.12em}
 html:not([data-theme=dark]) :is(.tags span,.ab-chips span){background:#ffffffb3;border:0}
 html:not([data-theme=dark]) .fp .tags span{background:#ffffff26;border:1px solid #ffffff59;color:#fff}
 html:not([data-theme=dark]) .cx-col{background:#f6f6f8;border:0}
-@media (max-width:700px){html:not([data-theme=dark]) .sec{padding:44px 18px;border-radius:26px}}
-html:not([data-theme=dark]) #about{background:#fff3c9}
-html:not([data-theme=dark]) #services{background:#d6f5ee}
-html:not([data-theme=dark]) #work{background:#e6e1ff}
-html:not([data-theme=dark]) #experience{background:#ffe3d1}
-html:not([data-theme=dark]) #education{background:#d9ecff}
-html:not([data-theme=dark]) #certifications{background:#fff0bd}
-html:not([data-theme=dark]) #contact{background:#ffdce8}
+@media (max-width:700px){html:not([data-theme=dark]) .sec{padding:44px 0}}
+html:not([data-theme=dark]) #about{background:#fff3c9;--bk:#fff3c9}
+html:not([data-theme=dark]) #services{background:#d6f5ee;--bk:#d6f5ee}
+html:not([data-theme=dark]) #work{background:#e6e1ff;--bk:#e6e1ff}
+html:not([data-theme=dark]) #experience{background:#ffe3d1;--bk:#ffe3d1}
+html:not([data-theme=dark]) #education{background:#d9ecff;--bk:#d9ecff}
+html:not([data-theme=dark]) #certifications{background:#fff0bd;--bk:#fff0bd}
+html:not([data-theme=dark]) #contact{background:#ffdce8;--bk:#ffdce8}
 </style>
 </head>
 <body>
