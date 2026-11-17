@@ -582,7 +582,10 @@ html:not([data-theme=dark]) .bchips{display:block;overflow:hidden;-webkit-mask-i
 .bchip{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;background:#fff;font:700 15px var(--display);color:#121212;white-space:nowrap;box-shadow:0 2px 0 #00000010,0 14px 24px -18px #0000004d}
 .bchip i{width:10px;height:10px;border-radius:50%;background:var(--c)}
 @media (max-width:600px){html:not([data-theme=dark]) .bo{padding:44px 0 40px}.bchip{padding:10px 14px;font-size:13.5px;gap:8px}.btrk{gap:10px}@keyframes bmq{to{transform:translateX(calc(-50% - 5px))}}}
-.nav.at-contact .cta{box-shadow:0 0 0 3px var(--bg),0 0 0 5px #f43f5e;transition:box-shadow .3s}
+.nav .cta{transition:box-shadow .35s,background .35s,transform .2s}
+.nav.at-contact .cta{background:linear-gradient(100deg,#0ea5a4,#f59e0b 55%,#f43f5e);background-size:200% 100%;animation:nvgr 3s ease-in-out infinite alternate;box-shadow:0 8px 18px -8px #f59e0bcc}
+@keyframes nvgr{to{background-position:100% 0}}
+@media (prefers-reduced-motion:reduce){.nav.at-contact .cta{animation:none}}
 </style>
 </head>
 <body>
